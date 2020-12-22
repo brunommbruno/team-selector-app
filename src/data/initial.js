@@ -1,11 +1,5 @@
 const initial = {
-    // matches: [
-    //     {
-    //         id: 1
-    //     },
-    // ]
-
-    matches: 1,
+    appIsOn: false,
 };
 
 export default initial;
