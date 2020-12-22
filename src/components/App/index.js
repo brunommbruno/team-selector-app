@@ -1,7 +1,6 @@
 import App from "./App";
 import { connect } from "react-redux";
 
-import { initiateApp } from "../../data/actions/api";
 
 const mapStateToProps = (state) => {
 	return {
@@ -11,9 +10,7 @@ const mapStateToProps = (state) => {
 
  const mapDispatchToProps = (dispatch) => {
 	return{
-		startApp: () => {
-			dispatch(initiateApp());
-		}
+
 	}	
 };
 

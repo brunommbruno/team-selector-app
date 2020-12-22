@@ -1,23 +1,25 @@
 import { Component } from "react";
 
-class App extends Component {
+import StartScreen from "../StartScreen"
 
-  constructor(props){
-    super(props);
-  }
+
+class App extends Component {
 
   render(){
 
     return(
-      <>
-        <label>Start Game</label>
-        <button onClick={this.props.startApp}>click me</button>
+      <div className={"container"}>
+        {!this.props.appIsOn ? 
+          <StartScreen /> 
+          : 
+          <h1>App Started</h1>
+        }
+    
+        
+        
 
-        {this.props.appIsOn ? <h1>App is on</h1> : <h1>App is not on</h1>}
 
-
-
-      </>
+      </div>
     )
   }
 }
