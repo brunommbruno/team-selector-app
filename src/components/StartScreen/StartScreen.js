@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Nav, Button, Alert } from "react-bootstrap";
+import { Nav, Button} from "react-bootstrap";
 
 class StartScreen extends Component {
 

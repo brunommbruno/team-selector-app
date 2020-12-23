@@ -1,5 +1,5 @@
 const initial = {
-    appIsOn: false,
+    appIsOn: true,
 };
 
 export default initial;

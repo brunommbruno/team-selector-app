@@ -1,6 +1,7 @@
 import { Component } from "react";
 
-import StartScreen from "../StartScreen"
+import StartScreen from "../StartScreen";
+import TeamCreator from "../TeamCreator";
 
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
         {!this.props.appIsOn ? 
           <StartScreen /> 
           : 
-          <h1>App Started</h1>
+          <TeamCreator />
         }
     
         
