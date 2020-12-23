@@ -13,7 +13,8 @@ const mapStateToProps = (state) => {
  const mapDispatchToProps = (dispatch) => {
 	return{
 		startApp: () => {
-			dispatch(initiateApp()); //changes app state to true
+			//changes app state to true, posts a match and returns id to state
+			dispatch(initiateApp());
 		}
 	}	
 };

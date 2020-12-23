@@ -30,6 +30,7 @@ class StartScreen extends Component {
         </div>
 
         {/* //changes appOn state to true and initialises main app */}
+        {/* //creates a new match post request to the api, saves match id to main state*/}
         <div className={"text-center mt-4"}>
             <Button
                 className={"button p-2"}
