@@ -13,7 +13,7 @@ const mapStateToProps = (state) => {
  const mapDispatchToProps = (dispatch) => {
 	return{
 		addTeam: (team_name, team_color, team_kit, match_id) => {
-			//changes app state to true, posts a match and returns id to state
+			//sends parameters to create post request to api method
 			dispatch(postTeam(team_name, team_color, team_kit, match_id));
 		}
 	}	

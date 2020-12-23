@@ -29,14 +29,14 @@ class TeamCreator extends Component {
   }
 
   handlePost() {
-    //adds team one
+    //posts team 1 to api and adds onto state
     this.props.addTeam({
       team_name: this.state.teamOne_name,
       team_color: this.state.teamTwo_color,
       team_kit: this.state.teamOne_kit,
       match_id: this.props.match_id,
     });
-    //adds team two
+    //posts team 2 to api and adds onto state
     this.props.addTeam({
       team_name: this.state.teamTwo_name,
       team_color: this.state.teamTwo_color,
@@ -68,7 +68,8 @@ class TeamCreator extends Component {
               team="teamTwo"
             />
 
-            <label for="cars">Players per team</label>
+          {/* TODO - ADD PLAYER AMOUNT ONTO STATE               */}
+            <label for="cars">Players per team</label>  
               <select id="player-amount">
                 <option value="5">5</option>
                 <option value="4">4</option>

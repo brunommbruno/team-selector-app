@@ -9,8 +9,8 @@ const reducer = (state, action) => {
         
             case "ADD_TEAM":
                 return {
-                    ...state,
-                    teams: [...state.teams, action.payload],
+                    ...state, //creates copy of state and applies new values
+                    teams: [...state.teams, action.payload], //payload: object passed from state.js method 
                 }
 
         default:
