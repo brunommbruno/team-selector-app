@@ -18,7 +18,7 @@ class TeamCreator extends Component {
     }
 
     this.handleInput = this.handleInput.bind(this);
-
+    this.handlePost = this.handlePost.bind(this);
   }
 
   //receives name parameter which handles which state to change
@@ -26,6 +26,24 @@ class TeamCreator extends Component {
     let obj = {};
     obj[name] = e.currentTarget.value;
     this.setState(obj)
+  }
+
+  handlePost() {
+    //adds team one
+    this.props.addTeam({
+      team_name: this.state.teamOne_name,
+      team_color: this.state.teamTwo_color,
+      team_kit: this.state.teamOne_kit,
+      match_id: this.props.match_id,
+    });
+    //adds team two
+    this.props.addTeam({
+      team_name: this.state.teamTwo_name,
+      team_color: this.state.teamTwo_color,
+      team_kit: this.state.teamTwo_kit,
+      match_id: this.props.match_id,
+    });
+
   }
 
 
@@ -56,6 +74,8 @@ class TeamCreator extends Component {
                 <option value="4">4</option>
                 <option value="3">3</option>
               </select>
+
+              <button onClick={this.handlePost}>Create Teams!</button>
         </>
     )
   }

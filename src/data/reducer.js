@@ -6,6 +6,12 @@ const reducer = (state, action) => {
                 appIsOn: true,
                 match_id: action.payload.match_id,
             };
+        
+            case "ADD_TEAM":
+                return {
+                    ...state,
+                    teams: [...state.teams, action.payload],
+                }
 
         default:
 			return state;

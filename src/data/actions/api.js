@@ -1,5 +1,5 @@
 import axios from "../../axios";
-import { startApp } from "./state";
+import { startApp, addTeam } from "./state";
 
 export const initiateApp = () => {
     return(dispatch) => {
@@ -19,3 +19,24 @@ export const initiateApp = () => {
             });
     }
 }
+
+export const postTeam = ({team_name, team_color, team_kit, match_id}) => {
+    return (dispatch) => {
+        axios.post(`matches/${match_id}/teams`, {
+                team_name: team_name,
+                team_color: team_color,
+                team_kit: team_kit,
+            }).then(({ data }) => {
+                dispatch(
+                    addTeam({
+                        id: data.data.id,
+                        team_name: data.data.team_name,
+                        team_color: data.data.team_color,
+                        team_kit: data.data.team_kit,
+                        score: data.data.score,
+                        match_id: data.data.match_id,
+                    })
+                )
+            });
+    };
+};
