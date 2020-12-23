@@ -1,32 +1,31 @@
 import { Component } from "react";
+import TeamInput from "../TeamInput";
 
 class TeamCreator extends Component {
+
 
   constructor(props){
     super(props);
 
     this.state = {
-      team_name: "",
-      team_color: "",
-      team_kit: "",
+      teamOne_name: "team one",
+      teamOne_color: "white",
+      teamOne_kit: "classic",
+
+      teamTwo_name: "team two",
+      teamTwo_color: "white",
+      teamTwo_kit: "classic"
     }
 
-    this.handleTeamName = this.handleTeamName.bind(this);
-    this.handleTeamColor = this.handleTeamColor.bind(this);
-    this.handleTeamKit = this.handleTeamKit.bind(this);
+    this.handleInput = this.handleInput.bind(this);
 
   }
 
-  handleTeamName(e){
-    this.setState({ team_name: e.currentTarget.value });
-  }
-
-  handleTeamColor(e){
-    this.setState({ team_color: e.currentTarget.value });
-  }
-
-  handleTeamKit(e){
-    this.setState({ team_kit: e.currentTarget.value });
+  //receives name parameter which handles which state to change
+  handleInput(e, name){
+    let obj = {};
+    obj[name] = e.currentTarget.value;
+    this.setState(obj)
   }
 
 
@@ -36,26 +35,20 @@ class TeamCreator extends Component {
         <>
             <h1 className={"text-center mt-4"}>Team Creation</h1>
 
-            <form>
-              <h2>Team One</h2>
-              <label>name</label>
-              <input onChange={this.handleTeamName}></input>
+            <h2>Team One</h2>
 
-              <label for="color">color</label>
-              <select id="team-color" onChange={this.handleTeamColor}>
-                <option value="red">red</option>
-                <option value="yellow">yellow</option>
-                <option value="blue">blue</option>
-              </select>   
+            {/* Includes name,color,kit inputs for each team*/}
+            <TeamInput 
+              //handleInput prop allows component to access local state method
+              handleInput={this.handleInput} 
+              team="teamOne"
+            />
 
-              <label for="kit">kit</label>
-              <select id="team-kit" onChange={this.handleTeamKit}>
-                <option value="classic">classic</option>
-                <option value="striped">striped</option>
-                <option value="checkers">checkers</option>
-              </select>
-           
-            </form>
+            <h2>Team Two</h2>
+            <TeamInput 
+              handleInput={this.handleInput}
+              team="teamTwo"
+            />
 
             <label for="cars">Players per team</label>
               <select id="player-amount">
