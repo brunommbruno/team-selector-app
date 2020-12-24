@@ -1,5 +1,6 @@
 import { Component } from "react";
 import TeamInput from "../TeamInput";
+import { Link } from "react-router-dom";
 
 class TeamCreator extends Component {
 
@@ -49,6 +50,13 @@ class TeamCreator extends Component {
 
   render(){
 
+    // let list = ["Nikodem,", "Juan,", "Ela,", "Robson,", "Maurice,", "Tayla,", "Maud,", "Gurveer,", "Hugo,", "Steve,"];
+    // list = list.sort(() => Math.random() - 0.5);
+
+    // let half = list.length/2;
+    // let a = list.slice(0, half);
+    // let b = list.slice(half, list.length);
+
     return(
         <>
             <h1 className={"text-center mt-4"}>Team Creation</h1>
@@ -76,7 +84,10 @@ class TeamCreator extends Component {
                 <option value="3">3</option>
               </select>
 
-              <button onClick={this.handlePost}>Create Teams!</button>
+              <button onClick={this.handlePost}><Link to="/add-players">Create Teams!</Link></button>
+
+
+          
         </>
     )
   }
