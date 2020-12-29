@@ -15,19 +15,19 @@ class PlayerCreator extends Component {
             teamOne: [],
             teamTwo: [],
         }
-
         this.handleInput = this.handleInput.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleRandom = this.handleRandom.bind(this);
     }
 
-
+    //takes in name of state variable to change and its value
     handleInput(e, name){
         let obj = {};
         obj[name] = e.currentTarget.value;
         this.setState(obj)
     }
 
+    //adds values in local state to players array as a player object
     handleAdd(){
         let player = {
             player_name: this.state.player_name, 
@@ -38,32 +38,27 @@ class PlayerCreator extends Component {
     }
 
     handleRandom(){
-        let randomList = [...this.state.players];
-
-        randomList = randomList.sort(() => Math.random() - 0.5);
-        let teamA = randomList.slice(0, (randomList.length/2));
-        let teamB = randomList.slice((randomList.length/2), randomList.length);
-
-        this.setState({teamOne: [...teamA], teamTwo: [...teamB]});
-        
+        const { players } = this.state;
+        //randomly sorts players in players array
+        this.setState({players: players.sort(() => Math.random() - 0.5 )})
+        //after players are randomised - adds first half of array to team 1 and second half to team 2
+        this.setState({
+            teamOne: [...players.slice(0, (players.length/2))],
+            teamTwo: [...players.slice((players.length/2), players.length)]
+        })
     }
 
   render(){
 
     return( 
       <>
-        {this.state.playersLeft > 0 ? 
-            <PlayerInput 
-                playersLeft={this.state.playersLeft}
-                handleInput={this.handleInput}
-                handleAdd={this.handleAdd}
-            /> 
-        :
-            <h1>No players left!</h1>}
-
+        <PlayerInput
+            handleInput={this.handleInput}
+            handleAdd={this.handleAdd}
+        /> 
         <br/>
-        <button onClick={this.handleRandom} disabled={this.state.playersLeft > 0 ? true : false}>Randomise</button>
-        <button disabled={this.state.playersLeft > 0 ? true : false}>Skill Based Random</button>
+        <button onClick={this.handleRandom}>Randomise</button>
+        <button >Skill Based Random</button>
       </>
     )
   }

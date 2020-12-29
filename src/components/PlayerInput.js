@@ -8,7 +8,6 @@ class PlayerInput extends Component {
 
     return(
         <>
-            <p>players left: {this.props.playersLeft}</p>
             <form>
                 <label>Name</label>
                 <input onChange={(e) => handleInput(e, "player_name")}></input>
