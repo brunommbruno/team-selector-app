@@ -5,12 +5,12 @@ import PlayerCreator from "./PlayerCreator";
 
 const mapStateToProps = (state) => {
 	return {
-		playerAmount: state.playerAmount,
 	};
 };
 
  const mapDispatchToProps = (dispatch) => {
 	return{
+
 	}	
 };
 

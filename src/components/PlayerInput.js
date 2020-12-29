@@ -20,7 +20,7 @@ class PlayerInput extends Component {
                 <input onChange={(e) => handleInput(e, "player_position")}></input>
             </form>
 
-            <button onClick={this.props.handleDecrement}>add</button>
+            <button onClick={this.props.handleAdd}>add</button>
 
 
         </>

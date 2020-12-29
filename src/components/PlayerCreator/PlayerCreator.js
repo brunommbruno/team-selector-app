@@ -11,21 +11,16 @@ class PlayerCreator extends Component {
             player_skill: 1,
             player_position: "fr",
 
-            playersLeft: 0,
+            players: [],
+            teamOne: [],
+            teamTwo: [],
         }
 
-        this.decrementPlayerAmount = this.decrementPlayerAmount.bind(this);
         this.handleInput = this.handleInput.bind(this);
-        this.handlePost = this.handlePost.bind(this);
+        this.handleAdd = this.handleAdd.bind(this);
+        this.handleRandom = this.handleRandom.bind(this);
     }
 
-    componentDidMount(){
-        this.setState({playersLeft: this.props.playerAmount})
-    }
-
-    decrementPlayerAmount(){
-        this.setState({playersLeft: this.state.playersLeft -1})
-    }
 
     handleInput(e, name){
         let obj = {};
@@ -33,7 +28,23 @@ class PlayerCreator extends Component {
         this.setState(obj)
     }
 
-    handlePost(){
+    handleAdd(){
+        let player = {
+            player_name: this.state.player_name, 
+            player_skill: this.state.player_skill, 
+            player_position: this.state.player_position 
+        }
+        this.setState({players: [...this.state.players, player]})
+    }
+
+    handleRandom(){
+        let randomList = [...this.state.players];
+
+        randomList = randomList.sort(() => Math.random() - 0.5);
+        let teamA = randomList.slice(0, (randomList.length/2));
+        let teamB = randomList.slice((randomList.length/2), randomList.length);
+
+        this.setState({teamOne: [...teamA], teamTwo: [...teamB]});
         
     }
 
@@ -44,14 +55,15 @@ class PlayerCreator extends Component {
         {this.state.playersLeft > 0 ? 
             <PlayerInput 
                 playersLeft={this.state.playersLeft}
-                handleDecrement={this.decrementPlayerAmount}
                 handleInput={this.handleInput}
+                handleAdd={this.handleAdd}
             /> 
         :
             <h1>No players left!</h1>}
 
         <br/>
-        <button disabled={this.state.playersLeft > 0 ? true : false}>Randomise</button>
+        <button onClick={this.handleRandom} disabled={this.state.playersLeft > 0 ? true : false}>Randomise</button>
+        <button disabled={this.state.playersLeft > 0 ? true : false}>Skill Based Random</button>
       </>
     )
   }
