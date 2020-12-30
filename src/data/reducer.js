@@ -13,6 +13,11 @@ const reducer = (state, action) => {
                 teams: [...state.teams, action.payload], //payload: object passed from state.js method
             }
         
+        case "ADD_PLAYER":
+            return{
+                ...state,
+                players: [...state.players, action.payload]
+            }
 
 
         default:
