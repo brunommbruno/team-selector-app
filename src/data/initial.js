@@ -2,7 +2,8 @@ const initial = {
     appIsOn: false,
     match_id: null,
     teams: [],
-    players: []
+    players: [],
+    player_amount: 0,
 };
 
 export default initial;

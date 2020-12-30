@@ -18,7 +18,12 @@ const reducer = (state, action) => {
                 ...state,
                 players: [...state.players, action.payload]
             }
-
+        
+        case "CHANGE_PLAYER_AMOUNT":
+            return{
+                ...state,
+                player_amount: action.payload.player_amount,
+            }
 
         default:
 			return state;

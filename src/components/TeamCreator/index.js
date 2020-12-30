@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import TeamCreator from "./TeamCreator";
 
 import { postTeam } from "../../data/actions/api";
+import { changePlayerAmount } from "../../data/actions/state";
 
 
 const mapStateToProps = (state) => {
@@ -15,6 +16,9 @@ const mapStateToProps = (state) => {
 		addTeam: (team_name, team_color, team_kit, match_id) => {
 			//sends parameters to create post request to api method
 			dispatch(postTeam(team_name, team_color, team_kit, match_id));
+		},
+		addPlayerAmount: ({player_amount}) => {
+			dispatch(changePlayerAmount({player_amount}));
 		}
 	}	
 };

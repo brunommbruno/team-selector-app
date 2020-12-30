@@ -15,7 +15,9 @@ class TeamCreator extends Component {
 
       teamTwo_name: "team two",
       teamTwo_color: "white",
-      teamTwo_kit: "classic"
+      teamTwo_kit: "classic",
+
+      player_amount: 0,
     }
 
     this.handleInput = this.handleInput.bind(this);
@@ -45,6 +47,9 @@ class TeamCreator extends Component {
       match_id: this.props.match_id,
     });
 
+    this.props.addPlayerAmount({
+      player_amount: (this.state.player_amount * 2),
+    })
   }
 
 
@@ -70,9 +75,8 @@ class TeamCreator extends Component {
               team="teamTwo"
             />
 
-          {/* TODO - ADD PLAYER AMOUNT ONTO STATE               */}
-            <label for="cars">Players per team</label>  
-              <select id="player-amount">
+            <label for="player-amount">Players per team</label>  
+              <select id="player-amount" onChange={(e) => this.handleInput(e, "player_amount")}>
                 <option value="5">5</option>
                 <option value="4">4</option>
                 <option value="3">3</option>

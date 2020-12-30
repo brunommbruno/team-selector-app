@@ -33,3 +33,12 @@ export const addPlayer = ({id, player_name, player_skill, player_position, team_
         }
     }
 }
+
+export const changePlayerAmount = ({player_amount}) => {
+    return{
+        type: "CHANGE_PLAYER_AMOUNT",
+        payload: {
+            player_amount: player_amount,
+        }
+    }
+}

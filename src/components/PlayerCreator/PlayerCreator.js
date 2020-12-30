@@ -11,9 +11,12 @@ class PlayerCreator extends Component {
             player_skill: 1,
             player_position: "fr",
 
+            player_amount: this.props.player_amount,
             players: [],
             teamOne: [],
             teamTwo: [],
+
+
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
@@ -35,7 +38,10 @@ class PlayerCreator extends Component {
             player_skill: this.state.player_skill, 
             player_position: this.state.player_position 
         }
-        this.setState({players: [...this.state.players, player]})
+        this.setState({
+            players: [...this.state.players, player],
+            player_amount: this.state.player_amount - 1,
+        })
     }
 
     //randomises teams and calls api post methods
@@ -77,10 +83,15 @@ class PlayerCreator extends Component {
 
     return( 
       <>
+        <p>Players left: {this.state.player_amount}</p>
+        {this.state.player_amount > 0 ? 
         <PlayerInput
             handleInput={this.handleInput}
             handleAdd={this.handleAdd}
-        /> 
+        />
+        :
+        <p>No players left to add</p>
+        } 
         <br/>
         <button onClick={this.handleRandom}>Randomise</button>
         <button onClick={this.handlePost}>post</button>

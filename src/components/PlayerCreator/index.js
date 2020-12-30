@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
 	return {
 		teamOneId: state.teams[0].id,
 		teamTwoId: state.teams[1].id,
+		player_amount: state.player_amount,
 
 	};
 };
