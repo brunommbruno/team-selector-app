@@ -20,3 +20,16 @@ export const addTeam = ({id, team_name, team_color, team_kit, score, match_id}) 
         },
     };
 };
+
+export const addPlayer = ({id, player_name, player_skill, player_position, team_id}) => {
+    return{
+        type: "ADD_PLAYER",
+        payload: {
+            id: id,
+            player_name: player_name,
+            player_skill: player_skill,
+            player_position: player_position,
+            team_id: team_id,
+        }
+    }
+}

@@ -18,6 +18,7 @@ class PlayerCreator extends Component {
         this.handleInput = this.handleInput.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleRandom = this.handleRandom.bind(this);
+        this.handlePost = this.handlePost.bind(this);
     }
 
     //takes in name of state variable to change and its value
@@ -37,6 +38,7 @@ class PlayerCreator extends Component {
         this.setState({players: [...this.state.players, player]})
     }
 
+    //randomises teams and calls api post methods
     handleRandom(){
         const { players } = this.state;
         //randomly sorts players in players array
@@ -45,6 +47,29 @@ class PlayerCreator extends Component {
         this.setState({
             teamOne: [...players.slice(0, (players.length/2))],
             teamTwo: [...players.slice((players.length/2), players.length)]
+        })
+    }
+
+    handlePost(){
+
+        const {addPlayer, teamOneId, teamTwoId} = this.props;
+
+        const {teamOne, teamTwo} = this.state;
+        teamOne.forEach(function(player) {
+            addPlayer({
+                player_name: player.player_name,
+                player_skill: player.player_skill,
+                player_position: player.player_position,
+                teamId: teamOneId,
+            })
+        })
+        teamTwo.forEach(function(player) {
+            addPlayer({
+                player_name: player.player_name,
+                player_skill: player.player_skill,
+                player_position: player.player_position,
+                teamId: teamTwoId,
+            })
         })
     }
 
@@ -58,7 +83,8 @@ class PlayerCreator extends Component {
         /> 
         <br/>
         <button onClick={this.handleRandom}>Randomise</button>
-        <button >Skill Based Random</button>
+        <button onClick={this.handlePost}>post</button>
+        {/* <button >Skill Based Random</button> */}
       </>
     )
   }

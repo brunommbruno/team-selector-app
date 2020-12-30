@@ -50,12 +50,6 @@ class TeamCreator extends Component {
 
   render(){
 
-    // let list = ["Nikodem,", "Juan,", "Ela,", "Robson,", "Maurice,", "Tayla,", "Maud,", "Gurveer,", "Hugo,", "Steve,"];
-    // list = list.sort(() => Math.random() - 0.5);
-
-    // let half = list.length/2;
-    // let a = list.slice(0, half);
-    // let b = list.slice(half, list.length);
 
     return(
         <>

@@ -11,6 +11,7 @@ import PlayerCreator from "../PlayerCreator";
 
 class App extends Component {
 
+
   render(){
 
     return(
@@ -27,7 +28,7 @@ class App extends Component {
               </div>
             </Route>
             <Route exatt path="/add-players">
-              <PlayerCreator />
+              {this.props.teams[1] ? <PlayerCreator /> : <p onClick={this.setActive}>loading...</p>}
             </Route>
           </Switch>
         </>

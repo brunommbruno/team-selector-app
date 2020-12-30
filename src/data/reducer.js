@@ -7,11 +7,13 @@ const reducer = (state, action) => {
                 match_id: action.payload.match_id,
             };
         
-            case "ADD_TEAM":
-                return {
-                    ...state, //creates copy of state and applies new values
-                    teams: [...state.teams, action.payload], //payload: object passed from state.js method 
-                }
+        case "ADD_TEAM":
+            return {
+                ...state, //creates copy of state and applies new values
+                teams: [...state.teams, action.payload], //payload: object passed from state.js method
+            }
+        
+
 
         default:
 			return state;
