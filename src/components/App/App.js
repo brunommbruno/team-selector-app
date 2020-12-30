@@ -21,13 +21,15 @@ class App extends Component {
             <Route exact path="/home">
               <div className={"container"}>
                 {!this.props.appIsOn ? 
+                  //resets state every time /home is loaded 
                   <StartScreen /> 
                   : 
                   <TeamCreator />
                 }
               </div>
             </Route>
-            <Route exatt path="/add-players">
+            <Route exact path="/add-players">
+              {/* PlayerCreator component requires both teams to work - only shown when this is true */}
               {this.props.teams[1] ? <PlayerCreator /> : <p onClick={this.setActive}>loading...</p>}
             </Route>
           </Switch>
