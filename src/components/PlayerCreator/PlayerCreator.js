@@ -61,6 +61,7 @@ class PlayerCreator extends Component {
         const {addPlayer, teamOneId, teamTwoId} = this.props;
 
         const {teamOne, teamTwo} = this.state;
+        //runs the add player api method for every player in the team - passing through its team aswell
         teamOne.forEach(function(player) {
             addPlayer({
                 player_name: player.player_name,
@@ -83,6 +84,7 @@ class PlayerCreator extends Component {
 
     return( 
       <>
+        {/* Player input component is disabled after enough players have been added*/}
         <p>Players left: {this.state.player_amount}</p>
         {this.state.player_amount > 0 ? 
         <PlayerInput
@@ -95,7 +97,7 @@ class PlayerCreator extends Component {
         <br/>
         <button onClick={this.handleRandom}>Randomise</button>
         <button onClick={this.handlePost}>post</button>
-        {/* <button >Skill Based Random</button> */}
+        {/* <button >Skill Based Random</button> TO DO*/}
       </>
     )
   }

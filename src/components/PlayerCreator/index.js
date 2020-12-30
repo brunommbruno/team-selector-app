@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
 	return {
 		teamOneId: state.teams[0].id,
 		teamTwoId: state.teams[1].id,
+		//controls the amount of players the user can input
 		player_amount: state.player_amount,
 
 	};
@@ -15,6 +16,7 @@ const mapStateToProps = (state) => {
 
  const mapDispatchToProps = (dispatch) => {
 	return{
+		//sends parameters to create post request to api method
 		addPlayer: (player_name, player_skill, player_position, teamId) => {
 			dispatch(postPlayer(player_name, player_skill, player_position, teamId));
 		}
