@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Nav, Button} from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 class StartScreen extends Component {
 
@@ -49,7 +50,7 @@ class StartScreen extends Component {
             <Button
                 className={"button p-2"}
                 onClick={this.props.startApp}
-            >Start Selecting! 
+            ><Link to="team-creator">Start Selecting!</Link> 
             </Button>
         </div>
       </>

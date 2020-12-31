@@ -1,6 +1,7 @@
 import { Component } from "react";
 import TeamInput from "../TeamInput";
 import { Link } from "react-router-dom";
+import { Container, Row, Col, Button } from "react-bootstrap";
 
 class TeamCreator extends Component {
 
@@ -9,11 +10,11 @@ class TeamCreator extends Component {
     super(props);
 
     this.state = {
-      teamOne_name: "team one",
+      teamOne_name: "Team One",
       teamOne_color: "white",
       teamOne_kit: "classic",
 
-      teamTwo_name: "team two",
+      teamTwo_name: "Team Two",
       teamTwo_color: "white",
       teamTwo_kit: "classic",
 
@@ -22,12 +23,26 @@ class TeamCreator extends Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.handlePost = this.handlePost.bind(this);
+    this.handleColor = this.handleColor.bind(this);
+    this.handleKit = this.handleKit.bind(this);
   }
 
   //receives name parameter which handles which state to change
   handleInput(e, name){
     let obj = {};
     obj[name] = e.currentTarget.value;
+    this.setState(obj)
+  }
+
+  handleColor(color, name){
+    let obj = {};
+    obj[name] = color;
+    this.setState(obj)
+  }
+
+  handleKit(kit, name){
+    let obj = {};
+    obj[name] = kit;
     this.setState(obj)
   }
 
@@ -54,38 +69,57 @@ class TeamCreator extends Component {
 
 
   render(){
-
-
     return(
         <>
-            <h1 className={"text-center mt-4"}>Team Creation</h1>
+            <Container>
+              <Row>
+                <Col>
+                  {/* Includes name,color,kit inputs for each team*/}
+                  <TeamInput 
+                    //handleInput prop allows component to access local state method
+                    handleInput={this.handleInput} 
+                    handleColor={this.handleColor}
+                    handleKit={this.handleKit}
+                    team="teamOne"
+                    teamName={this.state.teamOne_name}
+                  />
+                </Col>
+                <Col>
+                  <TeamInput 
+                    handleInput={this.handleInput}
+                    handleColor={this.handleColor}
+                    handleKit={this.handleKit}
+                    team="teamTwo"
+                    teamName={this.state.teamTwo_name}
+                  />
+                </Col>
+              </Row>
+              <Row>
+                {/*saves to state amount of players that can be inputted*/}
+                <Col className={"text-center mt-5"}>
+                  <label for="player-amount">Players per team: </label>  
+                    <select id="player-amount" onChange={(e) => this.handleInput(e, "player_amount")} className={"m-2"}>
+                      <option value="6">6</option>
+                      <option value="5">5</option>
+                      <option value="4">4</option>
+                      <option value="3">3</option>
+                      <option value="2">2</option>
+                    </select>
 
-            <h2>Team One</h2>
-
-            {/* Includes name,color,kit inputs for each team*/}
-            <TeamInput 
-              //handleInput prop allows component to access local state method
-              handleInput={this.handleInput} 
-              team="teamOne"
-            />
-
-            <h2>Team Two</h2>
-            <TeamInput 
-              handleInput={this.handleInput}
-              team="teamTwo"
-            />
-
-            <label for="player-amount">Players per team</label>  
-              <select id="player-amount" onChange={(e) => this.handleInput(e, "player_amount")}>
-                <option value="5">5</option>
-                <option value="4">4</option>
-                <option value="3">3</option>
-              </select>
-
-              <button onClick={this.handlePost}><Link to="/add-players">Create Teams!</Link></button>
-
-
-          
+                </Col>
+              </Row>
+              <Row>
+                <Col className={"text-center mt-3"}>
+                <Button 
+                  variant="light"
+                  onClick={this.handlePost}>
+                    <Link to="/add-players" className={"h2"}>
+                      Create Teams!
+                    </Link>
+                  </Button>
+                </Col>
+              </Row>
+            </Container>
         </>
     )
   }

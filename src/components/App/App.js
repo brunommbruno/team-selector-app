@@ -21,14 +21,9 @@ class App extends Component {
       <Router>
         <>
           <Switch>
-            <Route exact path="/home">
+            <Route exact path="/">
               <div className={"container"}>
-                {!appIsOn ? 
-                  //resets state every time /home is loaded 
                   <StartScreen /> 
-                  : 
-                  <TeamCreator />
-                }
               </div>
             </Route>
             <Route exact path="/add-players">
@@ -37,6 +32,11 @@ class App extends Component {
             </Route>
             <Route exact path="/match">
             {players[playerAmount - 1] ? <Match /> : <p >loading...</p>}
+            </Route>
+            <Route exact path="/team-creator">
+            <div className={"container"}>
+              <TeamCreator />
+            </div>
             </Route>
           </Switch>
         </>
