@@ -24,7 +24,21 @@ class StartScreen extends Component {
         <div style={{backgroundColor: "white"}}className={"p-3 home-info text-dark m-4"}>
             <h2>How To Use:</h2>
             <ul>
-                <li>Input 10 names</li>
+                <li>Create Each Team By Choosing: </li>
+                <ul>
+                  <li>Team Name</li>
+                  <li>Team Color</li>
+                  <li>Kit Design</li>
+                </ul>
+
+                <li>Create Your Own Players: </li>
+                <ul>
+                  <li>Name</li>
+                  <li>Position</li>
+                  <li>Skill Rating</li>
+                </ul>
+
+                <li>Randomise The Teams And Update Scores!</li>
             </ul>
 
         </div>
