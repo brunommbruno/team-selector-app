@@ -6,6 +6,8 @@ const mapStateToProps = (state) => {
 	return {
 		appIsOn: state.appIsOn,
 		teams: state.teams,
+		players: state.players,
+		playerAmount: state.player_amount,
 	};
 };
 

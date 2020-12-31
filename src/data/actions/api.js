@@ -43,7 +43,7 @@ export const postTeam = ({team_name, team_color, team_kit, match_id}) => {
     };
 };
 
-export const postPlayer = ({player_name, player_skill, player_position, teamId}) => {
+export const postPlayer = ({player_name, player_skill, player_position, teamId, teamNum}) => {
     return(dispatch) => {
     axios.post(`teams/${teamId}/players`, {
         player_name: player_name,
@@ -57,6 +57,7 @@ export const postPlayer = ({player_name, player_skill, player_position, teamId})
                 player_skill: data.data.player_skill,
                 player_position: data.data.player_position,
                 team_id: data.data.team_id,
+                teamNum: teamNum,
             })
         )
     });

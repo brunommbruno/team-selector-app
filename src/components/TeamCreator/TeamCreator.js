@@ -17,7 +17,7 @@ class TeamCreator extends Component {
       teamTwo_color: "white",
       teamTwo_kit: "classic",
 
-      player_amount: 0,
+      player_amount: 5,
     }
 
     this.handleInput = this.handleInput.bind(this);

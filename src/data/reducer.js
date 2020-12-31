@@ -16,7 +16,7 @@ const reducer = (state, action) => {
         case "ADD_PLAYER":
             return{
                 ...state,
-                players: [...state.players, action.payload]
+                players: [...state.players, action.payload], 
             }
         
         case "CHANGE_PLAYER_AMOUNT":

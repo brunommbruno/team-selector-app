@@ -21,7 +21,7 @@ export const addTeam = ({id, team_name, team_color, team_kit, score, match_id}) 
     };
 };
 
-export const addPlayer = ({id, player_name, player_skill, player_position, team_id}) => {
+export const addPlayer = ({id, player_name, player_skill, player_position, team_id, teamNum}) => {
     return{
         type: "ADD_PLAYER",
         payload: {
@@ -30,6 +30,7 @@ export const addPlayer = ({id, player_name, player_skill, player_position, team_
             player_skill: player_skill,
             player_position: player_position,
             team_id: team_id,
+            teamNum: teamNum,
         }
     }
 }

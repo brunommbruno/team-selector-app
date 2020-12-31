@@ -8,11 +8,14 @@ import{
 import StartScreen from "../StartScreen";
 import TeamCreator from "../TeamCreator";
 import PlayerCreator from "../PlayerCreator";
+import Match from "../Match";
 
 class App extends Component {
 
 
   render(){
+
+    const { appIsOn, teams, players, playerAmount } = this.props;
 
     return(
       <Router>
@@ -20,7 +23,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/home">
               <div className={"container"}>
-                {!this.props.appIsOn ? 
+                {!appIsOn ? 
                   //resets state every time /home is loaded 
                   <StartScreen /> 
                   : 
@@ -30,7 +33,10 @@ class App extends Component {
             </Route>
             <Route exact path="/add-players">
               {/* PlayerCreator component requires both teams to work - only shown when this is true */}
-              {this.props.teams[1] ? <PlayerCreator /> : <p onClick={this.setActive}>loading...</p>}
+              {teams[1] ? <PlayerCreator /> : <p >loading...</p>}
+            </Route>
+            <Route exact path="/match">
+            {players[playerAmount - 1] ? <Match /> : <p >loading...</p>}
             </Route>
           </Switch>
         </>

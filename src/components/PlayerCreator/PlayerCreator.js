@@ -1,5 +1,6 @@
 import { Component } from "react";
 import PlayerInput from "../PlayerInput";
+import { Link } from "react-router-dom";
 
 class PlayerCreator extends Component {
 
@@ -68,6 +69,7 @@ class PlayerCreator extends Component {
                 player_skill: player.player_skill,
                 player_position: player.player_position,
                 teamId: teamOneId,
+                teamNum: 0,
             })
         })
         teamTwo.forEach(function(player) {
@@ -76,6 +78,7 @@ class PlayerCreator extends Component {
                 player_skill: player.player_skill,
                 player_position: player.player_position,
                 teamId: teamTwoId,
+                teamNum: 1,
             })
         })
     }
@@ -92,11 +95,13 @@ class PlayerCreator extends Component {
             handleAdd={this.handleAdd}
         />
         :
+        <>
         <p>No players left to add</p>
+        <button onClick={this.handleRandom}>Random</button>
+        <button onClick={this.handlePost}><Link to="/match">See the teams!</Link></button>
+        </>
         } 
-        <br/>
-        <button onClick={this.handleRandom}>Randomise</button>
-        <button onClick={this.handlePost}>post</button>
+
         {/* <button >Skill Based Random</button> TO DO*/}
       </>
     )
