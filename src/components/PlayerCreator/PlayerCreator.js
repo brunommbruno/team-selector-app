@@ -56,6 +56,7 @@ class PlayerCreator extends Component {
             teamTwo: [...players.slice((players.length/2), players.length)],
             teamsRandomised: true,
         })
+
     }
 
     handlePost(){
@@ -86,8 +87,21 @@ class PlayerCreator extends Component {
 
   render(){
 
+    let team1Skill = 0;
+    let team2Skill = 0;
+    this.state.teamOne.map(player => {
+        team1Skill = +team1Skill + +player.player_skill;
+    })
+    this.state.teamTwo.map(player => {
+        team2Skill = +team2Skill + +player.player_skill;
+    })
+
     return( 
       <>
+        <h2>team 1 skill: {team1Skill}</h2>
+        <h2>team 2 skill: {team2Skill}</h2>
+
+
         {/* Player input component is disabled after enough players have been added*/}
         <p>Players left: {this.state.player_amount}</p>
         {this.state.player_amount > 0 ? 
@@ -98,10 +112,11 @@ class PlayerCreator extends Component {
         :
         <>
         <p>No players left to add</p>
-        {!this.state.teamsRandomised ? 
         <button onClick={this.handleRandom}>Randomise the teams!</button>
+        {this.state.teamsRandomised ? 
+            <button onClick={this.handlePost}><Link to="/match">See the teams!</Link></button>
         :
-        <button onClick={this.handlePost}><Link to="/match">See the teams!</Link></button>
+            null
         }
         </>
         } 
