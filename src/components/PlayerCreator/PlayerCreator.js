@@ -17,7 +17,7 @@ class PlayerCreator extends Component {
             teamOne: [],
             teamTwo: [],
 
-
+            teamsRandomised: false,
         }
         this.handleInput = this.handleInput.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
@@ -53,7 +53,8 @@ class PlayerCreator extends Component {
         //after players are randomised - adds first half of array to team 1 and second half to team 2
         this.setState({
             teamOne: [...players.slice(0, (players.length/2))],
-            teamTwo: [...players.slice((players.length/2), players.length)]
+            teamTwo: [...players.slice((players.length/2), players.length)],
+            teamsRandomised: true,
         })
     }
 
@@ -97,8 +98,11 @@ class PlayerCreator extends Component {
         :
         <>
         <p>No players left to add</p>
-        <button onClick={this.handleRandom}>Random</button>
+        {!this.state.teamsRandomised ? 
+        <button onClick={this.handleRandom}>Randomise the teams!</button>
+        :
         <button onClick={this.handlePost}><Link to="/match">See the teams!</Link></button>
+        }
         </>
         } 
 
