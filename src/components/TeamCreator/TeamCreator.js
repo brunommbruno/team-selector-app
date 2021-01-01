@@ -50,7 +50,7 @@ class TeamCreator extends Component {
     //posts team 1 to api and adds onto state
     this.props.addTeam({
       team_name: this.state.teamOne_name,
-      team_color: this.state.teamTwo_color,
+      team_color: this.state.teamOne_color,
       team_kit: this.state.teamOne_kit,
       match_id: this.props.match_id,
     });
