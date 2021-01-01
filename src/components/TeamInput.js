@@ -13,18 +13,13 @@ class TeamInput extends Component {
   constructor(props){
     super(props);
 
-    this.state = {
-      team_color: "",
-    }
   }
 
-  handleLocalColor(color){
-    this.setState({team_color: color})
-  }
+
 
 
   render(){
-    const { team, handleInput, handleColor, handleKit, teamName } = this.props; 
+    const { team, handleInput, handleColor, handleKit, teamName, teamColor} = this.props; 
 
     return(
         <>
@@ -50,7 +45,6 @@ class TeamInput extends Component {
                   <Form.Group controlId="formColor" style={{margin: "1rem"}}>
                     <CirclePicker 
                     onChange={(e) => handleColor(e.hex, `${team}_color`)}
-                    onChange={(e) => this.handleLocalColor(e.hex)}
                   /> 
                   </Form.Group>
 
@@ -63,6 +57,7 @@ class TeamInput extends Component {
                         <img 
                           src={kitClassic} 
                           style={{height: "4rem",  borderRadius: "1rem"}}
+                          alt={"Blank Jersey"}
                         />
                     </ToggleButton>
                     <ToggleButton
@@ -73,6 +68,7 @@ class TeamInput extends Component {
                       <img 
                         src={kitStriped} 
                         style={{height: "4rem",  borderRadius: "1rem"}}
+                        alt={"Striped Jersey"}
                       />
                     </ToggleButton>
                     <ToggleButton
@@ -83,10 +79,11 @@ class TeamInput extends Component {
                       <img 
                         src={kitCheckers} 
                         style={{height: "4rem",  borderRadius: "1rem"}}
+                        alt={"Checkered Jersey"}
                       />
                     </ToggleButton>
-                  </ToggleButtonGroup>
-                  <div style={{height: "10px", backgroundColor: `${this.state.team_color}`}}></div>
+                  </ToggleButtonGroup> 
+                 <div style={{height: "10px", backgroundColor: `${teamColor}`}}></div>
                 </Col>
 
                 <Col>

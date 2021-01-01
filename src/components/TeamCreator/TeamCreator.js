@@ -82,6 +82,7 @@ class TeamCreator extends Component {
                     handleKit={this.handleKit}
                     team="teamOne"
                     teamName={this.state.teamOne_name}
+                    teamColor={this.state.teamOne_color}
                   />
                 </Col>
                 <Col>
@@ -91,6 +92,7 @@ class TeamCreator extends Component {
                     handleKit={this.handleKit}
                     team="teamTwo"
                     teamName={this.state.teamTwo_name}
+                    teamColor={this.state.teamTwo_color}
                   />
                 </Col>
               </Row>
