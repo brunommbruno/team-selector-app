@@ -124,12 +124,6 @@ class PlayerCreator extends Component {
                         handleAdd={this.handleAdd}
                         handlePosition={this.handlePosition}
                     />
-                    {!this.state.player_amount > 0 ? 
-                        <Button className={"button m-3"} onClick={this.handleRandom}>Randomise the teams!</Button> : null
-                    }
-                    {this.state.teamsRandomised ? 
-                        <Button className={"button"}onClick={this.handlePost}><Link to="/match">See the teams!</Link></Button> : null
-                    }
                 </Col>
 
                 <Col className={"mt-5"}>
@@ -147,21 +141,26 @@ class PlayerCreator extends Component {
             <Row>
                 {this.props.teams.map(team => (
                     
-                    <Col className={"text-center"}>
+                    <Col className={"text-center player-creator-teams"}>
                         <h2>{team.team_name}</h2>
                         <img 
                             className={"m-3"}
-                            style={{height: "4rem"}} 
+                            style={{height: "3rem"}} 
                             src={team.team_kit === "classic" ? kitClassic : team.team_kit === "striped" ? kitStriped : kitCheckers}
                         />
                             <div style={{margin:"auto",width:"60%",height: "20px", backgroundColor: `${team.team_color}`}}></div>
-                            <p>Skill Level: </p>
-                            <p>{team.id === this.props.teamOneId ? team1Skill : team2Skill}</p>
+                            <p>Skill Level: {team.id === this.props.teamOneId ? team1Skill : team2Skill}</p>
                     </Col>
                     ))}
                 <Col>
+                    {!this.state.player_amount > 0 ? 
+                        <Button className={"button mx-auto"} onClick={this.handleRandom}>Randomise the teams!</Button> : null
+                    }
                 </Col>
                 <Col>
+                {this.state.teamsRandomised ? 
+                        <Button className={"button"}onClick={this.handlePost}><Link to="/match">See the teams!</Link></Button> : null
+                    }
                 </Col>
             </Row>
         </Container>

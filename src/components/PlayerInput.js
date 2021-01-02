@@ -16,7 +16,7 @@ class PlayerInput extends Component {
 
     return(
         <>
-          <Container className={"text-center mt-5"}>
+          <Container className={"text-center mt-5 player-input"}>
               <Form>
                 <Row>
                   <Col>
@@ -98,7 +98,7 @@ class PlayerInput extends Component {
 
               <Button 
                 onClick={this.props.handleAdd}
-                style={{fontSize: "2rem"}}
+                style={{fontSize: "1rem"}}
                 className={"m-3 mt-1 button"}
               >Add Player!</Button>
               </Row>

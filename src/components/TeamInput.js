@@ -23,7 +23,7 @@ class TeamInput extends Component {
 
     return(
         <>
-          <Container className={"text-center mt-5"}>
+          <Container className={"text-center mt-5 team-input"}>
             <Form>
               <Row>
                 <Col>

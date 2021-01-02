@@ -17,7 +17,7 @@ code {
 }
 
 .button {
-  font-size: 2rem;
+  font-size: 1rem;
   border-radius: 1rem;
   background-color: #5EC2A6;
   border-color: green;
@@ -29,5 +29,17 @@ code {
 }
 
 .home-info{
+  font-size: 1rem;
+}
+
+.team-input{
+  font-size: 1.5rem;
+}
+
+.player-input{
+  font-size: 1.5rem;
+}
+
+.player-creator-teams{
   font-size: 1.5rem;
 }
