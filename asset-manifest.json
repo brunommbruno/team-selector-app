@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/brunommbruno.github.io/team-selector-app/static/css/main.df0db7a3.chunk.css",
-    "main.js": "/brunommbruno.github.io/team-selector-app/static/js/main.315683e3.chunk.js",
-    "main.js.map": "/brunommbruno.github.io/team-selector-app/static/js/main.315683e3.chunk.js.map",
+    "main.js": "/brunommbruno.github.io/team-selector-app/static/js/main.d4fc0614.chunk.js",
+    "main.js.map": "/brunommbruno.github.io/team-selector-app/static/js/main.d4fc0614.chunk.js.map",
     "runtime-main.js": "/brunommbruno.github.io/team-selector-app/static/js/runtime-main.851f417b.js",
     "runtime-main.js.map": "/brunommbruno.github.io/team-selector-app/static/js/runtime-main.851f417b.js.map",
     "static/js/2.dfe36914.chunk.js": "/brunommbruno.github.io/team-selector-app/static/js/2.dfe36914.chunk.js",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.851f417b.js",
     "static/js/2.dfe36914.chunk.js",
     "static/css/main.df0db7a3.chunk.css",
-    "static/js/main.315683e3.chunk.js"
+    "static/js/main.d4fc0614.chunk.js"
   ]
 }
