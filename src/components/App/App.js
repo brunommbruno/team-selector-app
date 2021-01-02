@@ -15,7 +15,7 @@ class App extends Component {
 
   render(){
 
-    const { appIsOn, teams, players, playerAmount } = this.props;
+    const { teams, players, playerAmount } = this.props;
 
     return(
       <Router>
