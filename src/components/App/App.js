@@ -1,6 +1,6 @@
 import { Component } from "react";
 import{
-  HashRouter as Router,
+  HashRouter,
   Route,
   Switch,
 } from "react-router-dom";
@@ -18,7 +18,7 @@ class App extends Component {
     const { teams, players, playerAmount } = this.props;
 
     return(
-      <Router>
+      <HashRouter basename='/'>
         <>
           <Switch>
             <Route exact path="/">
@@ -44,7 +44,7 @@ class App extends Component {
             </Route>
           </Switch>
         </>
-      </Router>
+      </HashRouter>
         
 
 
