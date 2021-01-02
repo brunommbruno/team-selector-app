@@ -42,7 +42,7 @@ class PlayerInput extends Component {
 
                 <Row>
                   
-                  <ToggleButtonGroup type="radio" name="options" defaultValue={1} className={"mt-4"}>
+                  <ToggleButtonGroup type="radio" name="options" className={"mt-4"}>
                     <ToggleButton
                       value={1}
                       variant="transparent"

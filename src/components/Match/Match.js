@@ -1,4 +1,11 @@
 import { Component } from "react";
+import MatchTeams from "../MatchTeams";
+import {Container, Row, Col, Alert } from "react-bootstrap";
+
+import kitStriped from "../../img/kit-striped.png";
+import kitClassic from "../../img/kit-classic.png";
+import kitCheckers from "../../img/kit-checkers.png";
+
 
 class Match extends Component{
 
@@ -8,33 +15,43 @@ class Match extends Component{
 
     render(){
 
-        const teamOne = this.props.players.filter((player) => {
-            return player.teamNum === 0;
-        })
-        const teamOneGk = teamOne.filter((player) => { return player.player_position === "gk";})
-        const teamOneDef = teamOne.filter((player) => { return player.player_position === "def";})
-        const teamOneMid = teamOne.filter((player) => { return player.player_position === "mid";})
-        const teamOneAtt = teamOne.filter((player) => { return player.player_position === "att";})
+        const { players, teams } = this.props;
+        const teamOneKit = teams[0].team_kit === "classic" ? kitClassic : teams[0].team_kit === "striped" ? kitStriped : kitCheckers;
+        const teamTwoKit = teams[1].team_kit === "classic" ? kitClassic : teams[1].team_kit === "striped" ? kitStriped : kitCheckers;
 
-        const teamTwo = this.props.players.filter((player) => {
-            return player.teamNum === 1;
+        const teamOne = players.filter((player) => {
+            return player.team_id === teams[0].id;
         })
-        const teamTwoGk = teamTwo.filter((player) => { return player.player_position === "gk";})
-        const teamTwoDef = teamTwo.filter((player) => { return player.player_position === "def";})
-        const teamTwoMid = teamTwo.filter((player) => { return player.player_position === "mid";})
-        const teamTwoAtt = teamTwo.filter((player) => { return player.player_position === "att";})
+        const teamTwo = players.filter((player) => {
+            return player.team_id === teams[1].id;
+        })
 
         return(
             <>
-                <h2>Team One</h2>
-                {teamOne.map(player => (
-                    <p>name: {player.player_name}, skill: {player.player_skill}, position: {player.player_position}</p>
-                ))}
+            {console.log(teamOne)}
+                <Container>
+                <Row>
+                    <Col>
+                    <br/>
+                    </Col>
+                </Row>
+                <Row>
+                    <MatchTeams 
+                        teamName={teams[0].team_name}
+                        teamColor={teams[0].team_color}
+                        players={teamOne}
+                        teamKit={teamOneKit}
+                    />
+                    <MatchTeams 
+                        teamName={teams[1].team_name}
+                        teamColor={teams[1].team_color}
+                        players={teamTwo}
+                        teamKit={teamTwoKit}
+                    />
 
-                <h2>Team Two</h2>
-                {teamTwo.map(player => (
-                    <p>name: {player.player_name}, skill: {player.player_skill}, position: {player.player_position}</p>
-                ))}
+                </Row>
+                </Container>
+
 
             </>
         )

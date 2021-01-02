@@ -4,7 +4,8 @@ import Match from "./Match";
 
 const mapStateToProps = (state) => {
 	return {
-        players: state.players,
+		players: state.players,
+		teams: state.teams,
 	};
 };
 

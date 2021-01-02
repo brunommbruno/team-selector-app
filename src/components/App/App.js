@@ -33,7 +33,9 @@ class App extends Component {
               </div>
             </Route>
             <Route exact path="/match">
+            <div className={"container"}>
             {players[playerAmount - 1] ? <Match /> : <p >loading...</p>}
+            </div>
             </Route>
             <Route exact path="/team-creator">
             <div className={"container"}>

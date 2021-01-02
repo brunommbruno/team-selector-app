@@ -17,7 +17,7 @@ class PlayerCreator extends Component {
         this.state = {
             player_name: "name",
             player_skill: 1,
-            player_position: "fr",
+            player_position: "att",
 
             player_amount: this.props.player_amount,
             players: [],
