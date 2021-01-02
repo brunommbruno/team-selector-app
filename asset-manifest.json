@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/brunommbruno.github.io/team-selector-app/static/css/main.df0db7a3.chunk.css",
+    "main.js": "/brunommbruno.github.io/team-selector-app/static/js/main.dec86959.chunk.js",
+    "main.js.map": "/brunommbruno.github.io/team-selector-app/static/js/main.dec86959.chunk.js.map",
+    "runtime-main.js": "/brunommbruno.github.io/team-selector-app/static/js/runtime-main.851f417b.js",
+    "runtime-main.js.map": "/brunommbruno.github.io/team-selector-app/static/js/runtime-main.851f417b.js.map",
+    "static/js/2.dfe36914.chunk.js": "/brunommbruno.github.io/team-selector-app/static/js/2.dfe36914.chunk.js",
+    "static/js/2.dfe36914.chunk.js.map": "/brunommbruno.github.io/team-selector-app/static/js/2.dfe36914.chunk.js.map",
+    "static/js/3.60e4c445.chunk.js": "/brunommbruno.github.io/team-selector-app/static/js/3.60e4c445.chunk.js",
+    "static/js/3.60e4c445.chunk.js.map": "/brunommbruno.github.io/team-selector-app/static/js/3.60e4c445.chunk.js.map",
+    "index.html": "/brunommbruno.github.io/team-selector-app/index.html",
+    "static/css/main.df0db7a3.chunk.css.map": "/brunommbruno.github.io/team-selector-app/static/css/main.df0db7a3.chunk.css.map",
+    "static/js/2.dfe36914.chunk.js.LICENSE.txt": "/brunommbruno.github.io/team-selector-app/static/js/2.dfe36914.chunk.js.LICENSE.txt",
+    "static/media/kit-checkers.033be1c3.png": "/brunommbruno.github.io/team-selector-app/static/media/kit-checkers.033be1c3.png",
+    "static/media/kit-striped.f2ed9834.png": "/brunommbruno.github.io/team-selector-app/static/media/kit-striped.f2ed9834.png",
+    "static/media/user.33e7df09.png": "/brunommbruno.github.io/team-selector-app/static/media/user.33e7df09.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.851f417b.js",
+    "static/js/2.dfe36914.chunk.js",
+    "static/css/main.df0db7a3.chunk.css",
+    "static/js/main.dec86959.chunk.js"
+  ]
+}
