@@ -21,27 +21,32 @@ class App extends Component {
       <HashRouter basename='/'>
         <>
           <Switch>
+
             <Route exact path="/">
               <div className={"container"}>
                   <StartScreen /> 
               </div>
             </Route>
+
             <Route exact path="/add-players">
               <div className={"container"}>
               {/* PlayerCreator component requires both teams to work - only shown when this is true */}
               {teams[1] ? <PlayerCreator /> : <p >loading...</p>}
               </div>
             </Route>
+
             <Route exact path="/match">
             <div className={"container"}>
             {players[playerAmount - 1] ? <Match /> : <p >loading...</p>}
             </div>
             </Route>
+
             <Route exact path="/team-creator">
             <div className={"container"}>
               <TeamCreator />
             </div>
             </Route>
+            
           </Switch>
         </>
       </HashRouter>
