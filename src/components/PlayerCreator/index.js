@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
 		teamTwoId: state.teams[1].id,
 		//controls the amount of players the user can input
 		player_amount: state.player_amount,
+		teams: state.teams,
 
 	};
 };

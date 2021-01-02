@@ -27,8 +27,10 @@ class App extends Component {
               </div>
             </Route>
             <Route exact path="/add-players">
+              <div className={"container"}>
               {/* PlayerCreator component requires both teams to work - only shown when this is true */}
               {teams[1] ? <PlayerCreator /> : <p >loading...</p>}
+              </div>
             </Route>
             <Route exact path="/match">
             {players[playerAmount - 1] ? <Match /> : <p >loading...</p>}

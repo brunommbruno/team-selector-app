@@ -2,6 +2,13 @@ import { Component } from "react";
 import PlayerInput from "../PlayerInput";
 import { Link } from "react-router-dom";
 
+import user from "../../img/user.png"
+import kitStriped from "../../img/kit-striped.png";
+import kitClassic from "../../img/kit-classic.png";
+import kitCheckers from "../../img/kit-checkers.png";
+
+import { Alert, Container, Row, Col, Button, ListGroup} from "react-bootstrap";
+
 class PlayerCreator extends Component {
 
     constructor(props){
@@ -23,6 +30,7 @@ class PlayerCreator extends Component {
         this.handleAdd = this.handleAdd.bind(this);
         this.handleRandom = this.handleRandom.bind(this);
         this.handlePost = this.handlePost.bind(this);
+        this.handlePosition = this.handlePosition.bind(this);
     }
 
     //takes in name of state variable to change and its value
@@ -32,17 +40,25 @@ class PlayerCreator extends Component {
         this.setState(obj)
     }
 
+    handlePosition(position, name){
+        let obj = {};
+        obj[name] = position;
+        this.setState(obj)
+      }
+
     //adds values in local state to players array as a player object
     handleAdd(){
-        let player = {
-            player_name: this.state.player_name, 
-            player_skill: this.state.player_skill, 
-            player_position: this.state.player_position 
+        if(this.state.player_amount > 0){
+            let player = {
+                player_name: this.state.player_name, 
+                player_skill: this.state.player_skill, 
+                player_position: this.state.player_position 
+            }
+            this.setState({
+                players: [...this.state.players, player],
+                player_amount: this.state.player_amount - 1,
+            })
         }
-        this.setState({
-            players: [...this.state.players, player],
-            player_amount: this.state.player_amount - 1,
-        })
     }
 
     //randomises teams and calls api post methods
@@ -98,30 +114,57 @@ class PlayerCreator extends Component {
 
     return( 
       <>
-        <h2>team 1 skill: {team1Skill}</h2>
-        <h2>team 2 skill: {team2Skill}</h2>
-
 
         {/* Player input component is disabled after enough players have been added*/}
-        <p>Players left: {this.state.player_amount}</p>
-        {this.state.player_amount > 0 ? 
-        <PlayerInput
-            handleInput={this.handleInput}
-            handleAdd={this.handleAdd}
-        />
-        :
-        <>
-        <p>No players left to add</p>
-        <button onClick={this.handleRandom}>Randomise the teams!</button>
-        {this.state.teamsRandomised ? 
-            <button onClick={this.handlePost}><Link to="/match">See the teams!</Link></button>
-        :
-            null
-        }
-        </>
-        } 
+        <Container>
+            <Row>
+                <Col>
+                    <PlayerInput
+                        handleInput={this.handleInput}
+                        handleAdd={this.handleAdd}
+                        handlePosition={this.handlePosition}
+                    />
+                    {!this.state.player_amount > 0 ? 
+                        <Button className={"button m-3"} onClick={this.handleRandom}>Randomise the teams!</Button> : null
+                    }
+                    {this.state.teamsRandomised ? 
+                        <Button className={"button"}onClick={this.handlePost}><Link to="/match">See the teams!</Link></Button> : null
+                    }
+                </Col>
 
-        {/* <button >Skill Based Random</button> TO DO*/}
+                <Col className={"mt-5"}>
+                    <Alert variant={"info"} style={{fontSize:"1.5rem"}}>Players Left: {this.state.player_amount}</Alert>
+                    <ListGroup className={"d-flex flex-row flex-wrap"}>
+                    {this.state.players.map(player => (
+                        <ListGroup.Item variant={"info"} style={{width: "30%"}}>
+                            
+                            <h5><img src={user}style={{height: "2rem"}}/>{`${player.player_name}`}</h5>
+                        </ListGroup.Item>
+                    ))}
+                    </ListGroup>
+                </Col>
+            </Row>
+            <Row>
+                {this.props.teams.map(team => (
+                    
+                    <Col className={"text-center"}>
+                        <h2>{team.team_name}</h2>
+                        <img 
+                            className={"m-3"}
+                            style={{height: "4rem"}} 
+                            src={team.team_kit === "classic" ? kitClassic : team.team_kit === "striped" ? kitStriped : kitCheckers}
+                        />
+                            <div style={{margin:"auto",width:"60%",height: "20px", backgroundColor: `${team.team_color}`}}></div>
+                            <p>Skill Level: </p>
+                            <p>{team.id === this.props.teamOneId ? team1Skill : team2Skill}</p>
+                    </Col>
+                    ))}
+                <Col>
+                </Col>
+                <Col>
+                </Col>
+            </Row>
+        </Container>
       </>
     )
   }
