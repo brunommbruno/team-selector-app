@@ -18,7 +18,7 @@ class TeamCreator extends Component {
       teamTwo_color: "white",
       teamTwo_kit: "classic",
 
-      player_amount: 5,
+      player_amount: 4,
     }
 
     this.handleInput = this.handleInput.bind(this);
@@ -103,7 +103,7 @@ class TeamCreator extends Component {
                     <select id="player-amount" onChange={(e) => this.handleInput(e, "player_amount")} className={"m-2"}>
                       <option value="6">6</option>
                       <option value="5">5</option>
-                      <option value="4">4</option>
+                      <option value="4" selected="selected">4</option>
                       <option value="3">3</option>
                       <option value="2">2</option>
                     </select>
