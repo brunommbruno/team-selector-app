@@ -1,6 +1,6 @@
 import { Component } from "react";
 import MatchTeams from "../MatchTeams";
-import {Container, Row, Col, Alert } from "react-bootstrap";
+import {Container, Row, Col } from "react-bootstrap";
 
 import kitStriped from "../../img/kit-striped.png";
 import kitClassic from "../../img/kit-classic.png";
@@ -8,10 +8,6 @@ import kitCheckers from "../../img/kit-checkers.png";
 
 
 class Match extends Component{
-
-    constructor(props){
-        super(props);
-    }
 
     render(){
 

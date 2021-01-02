@@ -19,9 +19,9 @@ class MatchTeams extends Component{
                 <div className={"mt-3 text-center"}>
                 {players.map(player => (
                     <Alert variant="success">
-                        <img className={"match-img"}src={teamKit}/>
+                        <img className={"match-img"}src={teamKit}alt={"team kit"}/>
                         {player.player_name}
-                        <img className={"match-img"}src={player.player_position === "gk" ? gk : player.player_position === "def" ? def : player.player_position === "mid" ? mid : att}/>
+                        <img className={"match-img"}src={player.player_position === "gk" ? gk : player.player_position === "def" ? def : player.player_position === "mid" ? mid : att}alt={"player position"}/>
                     </Alert>
                 ))}
                 </div>

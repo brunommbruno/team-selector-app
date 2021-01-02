@@ -1,5 +1,5 @@
 import { Component } from "react";
-import {Form, ToggleButtonGroup, ToggleButton, Button, OverlayTrigger, Tooltip} from "react-bootstrap";
+import {Form, Button, OverlayTrigger, Tooltip} from "react-bootstrap";
 
 class Inputs extends Component{
 
@@ -13,7 +13,7 @@ class Inputs extends Component{
           )
       
 
-        const { type, placeholder, handleInput, title, stateName, value, img, alt, handlePosition} = this.props
+        const { type, placeholder, handleInput, title, stateName,} = this.props
 
         return(
             <>

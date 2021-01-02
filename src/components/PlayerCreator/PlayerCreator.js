@@ -106,10 +106,10 @@ class PlayerCreator extends Component {
     let team1Skill = 0;
     let team2Skill = 0;
     this.state.teamOne.map(player => {
-        team1Skill = +team1Skill + +player.player_skill;
+        return team1Skill = +team1Skill + +player.player_skill;
     })
     this.state.teamTwo.map(player => {
-        team2Skill = +team2Skill + +player.player_skill;
+        return team2Skill = +team2Skill + +player.player_skill;
     })
 
     return( 
@@ -132,7 +132,7 @@ class PlayerCreator extends Component {
                     {this.state.players.map(player => (
                         <ListGroup.Item variant={"info"} style={{width: "30%"}}>
                             
-                            <h5><img src={user}style={{height: "2rem"}}/>{`${player.player_name}`}</h5>
+                            <h5><img src={user}style={{height: "2rem"}}alt={"user icon"}/>{`${player.player_name}`}</h5>
                         </ListGroup.Item>
                     ))}
                     </ListGroup>
@@ -147,6 +147,7 @@ class PlayerCreator extends Component {
                             className={"m-3"}
                             style={{height: "3rem"}} 
                             src={team.team_kit === "classic" ? kitClassic : team.team_kit === "striped" ? kitStriped : kitCheckers}
+                            alt={"team kit"}
                         />
                             <div style={{margin:"auto",width:"60%",height: "20px", backgroundColor: `${team.team_color}`}}></div>
                             <p>Skill Level: {team.id === this.props.teamOneId ? team1Skill : team2Skill}</p>

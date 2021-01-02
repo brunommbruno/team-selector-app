@@ -10,14 +10,6 @@ import kitCheckers from "../img/kit-checkers.png";
 
 class TeamInput extends Component {
 
-  constructor(props){
-    super(props);
-
-  }
-
-
-
-
   render(){
     const { team, handleInput, handleColor, handleKit, teamName, teamColor} = this.props; 
 
