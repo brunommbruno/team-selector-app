@@ -47,11 +47,13 @@ class StartScreen extends Component {
         {/* //changes appOn state to true and initialises main app */}
         {/* //creates a new match post request to the api, saves match id to main state*/}
         <div className={"text-center mt-4"}>
-            <Button
-                className={"button p-2"}
-                onClick={this.props.startApp}
-            ><Link to="team-creator">Start Selecting!</Link> 
-            </Button>
+            <Link to="team-creator">
+              <Button
+                  className={"button p-2"}
+                  onClick={this.props.startApp}
+              >Start Selecting!
+              </Button>
+            </Link>
         </div>
       </>
     )

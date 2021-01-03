@@ -112,13 +112,13 @@ class TeamCreator extends Component {
               </Row>
               <Row>
                 <Col className={"text-center mt-3"}>
-                <Button 
-                  variant="light"
-                  onClick={this.handlePost}>
-                    <Link to="/add-players" className={"h2"}>
+                <Link to="/add-players" className={"h2"}>
+                  <Button 
+                    variant="light"
+                    onClick={this.handlePost}>
                       Create Teams!
-                    </Link>
                   </Button>
+                </Link>
                 </Col>
               </Row>
             </Container>

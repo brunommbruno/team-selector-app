@@ -160,7 +160,7 @@ class PlayerCreator extends Component {
                 </Col>
                 <Col>
                 {this.state.teamsRandomised ? 
-                        <Button className={"button"}onClick={this.handlePost}><Link to="/match">See the teams!</Link></Button> : null
+                        <Link to="/match"><Button className={"button"}onClick={this.handlePost}>See the teams!</Button></Link> : null
                     }
                 </Col>
             </Row>
