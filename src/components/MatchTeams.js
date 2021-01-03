@@ -17,6 +17,7 @@ class MatchTeams extends Component{
                 <h2 className={"text-center"}>{teamName}</h2>
                 <div className={"team-color-bar"}style={{backgroundColor: `${teamColor}`}}></div>
                 <div className={"mt-3 text-center player-display"}>
+                {/* maps through each player to display them */}
                 {players.map(player => (
                     <Alert variant="success">
                         <img className={"match-img"}src={teamKit}alt={"team kit"}/>

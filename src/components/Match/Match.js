@@ -12,10 +12,10 @@ class Match extends Component{
 
     constructor(props){
         super(props);
-
         this.handlePatch = this.handlePatch.bind(this);
     }
 
+    //sends patch request with current team + 1 goal (score)
     handlePatch(team){
         this.props.editTeam({
             id: team.id,
@@ -30,9 +30,12 @@ class Match extends Component{
     render(){
 
         const { players, teams } = this.props;
+
+        //assigns kit pictures to each team
         const teamOneKit = teams[0].team_kit === "classic" ? kitClassic : teams[0].team_kit === "striped" ? kitStriped : kitCheckers;
         const teamTwoKit = teams[1].team_kit === "classic" ? kitClassic : teams[1].team_kit === "striped" ? kitStriped : kitCheckers;
 
+        //assigns players to each team
         const teamOne = players.filter((player) => {
             return player.team_id === teams[0].id;
         })
@@ -49,6 +52,7 @@ class Match extends Component{
                     </Col>
                 </Row>
                 <Row>
+                    {/* Displays each team + their players */}
                     <MatchTeams 
                         teamName={teams[0].team_name}
                         teamColor={teams[0].team_color}
@@ -62,6 +66,7 @@ class Match extends Component{
                         teamKit={teamTwoKit}
                     />
                 </Row>
+                {/* Buttons that fire off the score patch method */}
                 <Row className={"text-center"}>
                     <Col>
                     Score: {teams[0].score}
@@ -74,6 +79,7 @@ class Match extends Component{
                     </Col>
                 </Row>
                 </Container>
+                {/* Brings back to home page and resets state so new valeus can be inputted */}
                 <Link to="/"><Button onClick={this.props.reset}>Finish Game!  Match Id: {this.props.teams[0].match_id}</Button></Link>
             </>
         )

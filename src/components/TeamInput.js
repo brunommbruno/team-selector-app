@@ -40,6 +40,7 @@ class TeamInput extends Component {
                   /> 
                   </Form.Group>
 
+                  {/* changes team_kit state */}
                   <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
                     <ToggleButton
                       value={1}
@@ -78,8 +79,7 @@ class TeamInput extends Component {
                  <div style={{height: "10px", backgroundColor: `${teamColor}`}}></div>
                 </Col>
 
-                <Col>
-                  
+                <Col>  
                 </Col>
               </Row>
             </Form>

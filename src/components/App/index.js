@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (state) => {
 	return {
-		appIsOn: state.appIsOn,
+		//required so creator components know when to load
 		teams: state.teams,
 		players: state.players,
 		playerAmount: state.player_amount,

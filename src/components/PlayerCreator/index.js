@@ -6,6 +6,7 @@ import { postPlayer } from "../../data/actions/api";
 
 const mapStateToProps = (state) => {
 	return {
+		//needed to create post requests
 		teamOneId: state.teams[0].id,
 		teamTwoId: state.teams[1].id,
 		//controls the amount of players the user can input

@@ -20,6 +20,7 @@ class PlayerInput extends Component {
               <Form>
                 <Row>
                   <Col>
+                    {/* player_name input  */}
                     <Inputs 
                       type="text"
                       placeholder="Steve"
@@ -30,6 +31,7 @@ class PlayerInput extends Component {
                   </Col>
 
                   <Col>
+                  {/* player_skill input  */}
                     <Inputs 
                       type="select"
                       handleInput={handleInput}
@@ -41,7 +43,7 @@ class PlayerInput extends Component {
               </Form>
 
                 <Row>
-                  
+                  {/* player_position input */}
                   <ToggleButtonGroup type="radio" name="options" className={"mt-4 button-group"}>
                     <ToggleButton
                       value={1}
@@ -96,6 +98,7 @@ class PlayerInput extends Component {
                   </ToggleButton>
                 </ToggleButtonGroup>
 
+              {/* adds player object to local player creator state */}
               <Button 
                 onClick={this.props.handleAdd}
                 style={{fontSize: "1rem"}}

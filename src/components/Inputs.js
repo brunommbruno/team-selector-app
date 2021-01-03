@@ -48,7 +48,6 @@ class Inputs extends Component{
                         </Form.Control>
                     </Form.Group>
                     :
-
                     null
             }
             </>

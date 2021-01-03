@@ -30,6 +30,7 @@ class PreviousMatches extends Component{
 
     getMatch(){
 
+        //if there is already a match in local state-reset so it can store new one
         if(this.state.teamsLoaded){
             this.setState({
                 match: [],
@@ -52,7 +53,7 @@ class PreviousMatches extends Component{
             this.setState({players: data.data,});
         })
         axios.get(`/teams/${this.state.teamTwoId}/players`).then(({data}) => {
-            this.setState({players: [this.state.players ,data.data], playersLoaded: true});
+            this.setState({players: [this.state.players , data.data], playersLoaded: true});
         })
     }
 
@@ -71,10 +72,11 @@ class PreviousMatches extends Component{
             <>
                 <Container>
                     <Row>
+                        {/* saves id to be fetched into state */}
                         <Col className={"text-center"}>
                             <Form.Control 
                                 type="text" 
-                                placeholder={"Match Id: e.g 67"}
+                                placeholder={"Match Id: e.g 82"}
                                 onChange={(e) => this.handleInput(e)}
                                 style={{width: "50%", margin: "auto"}}
                             >
@@ -84,6 +86,7 @@ class PreviousMatches extends Component{
                         </Col>
                     </Row>
                     <Row>
+                        {/* if teams have been loaded - display both */}
                         {this.state.teamsLoaded ?
                         <>
                             <Col>
@@ -97,15 +100,16 @@ class PreviousMatches extends Component{
                                 <div className={"team-color-bar"}style={{backgroundColor: `${match.teams[0].team_color}`}}></div>
                                 {this.state.playersLoaded ?
                                 <div>
-                                    {this.state.players ? 
+                                    {this.state.playersLoaded ? 
                                     <div>
-                                    {this.state.players.map(player => (
+                                    {/* maps through the first set of players which will belong to the `first team` loaded - 1st in array*/}
+                                    {this.state.players[0].map(player => (
                                         <p>{player.player_name}</p>
                                     ))}
                                     <p>{match.teams[0].score}</p>
                                     </div>
                                     :
-                                    <p>No Players Available</p>
+                                    null
                                     }
                                 </div>
                                 :
@@ -123,17 +127,17 @@ class PreviousMatches extends Component{
                                     alt={"team kit"}
                                 />
                                 <div className={"team-color-bar"}style={{backgroundColor: `${match.teams[1].team_color}`}}></div>
+                                {/* maps through the second set of players which will belong to the `second team` loaded - 2nd in array*/}
                                 {this.state.playersLoaded ?
                                 <div>
-                                    {this.state.players ? 
+                                    {this.state.playersLoaded ?
                                     <div>
-                                    {this.state.players.map(player => (
+                                    {this.state.players[1].map(player => (
                                         <p>{player.player_name}</p>
                                     ))}
                                     <p>{match.teams[1].score}</p>
                                     </div>
-                                    :
-                                    <p>No Players Available</p>
+                                    :null
                                     }
                                 </div>
                                 :
@@ -142,14 +146,11 @@ class PreviousMatches extends Component{
                                 </div>
                             </Col>
                         </>
-                    :
-                    null
-            }
+                                :null
+                        }
 
-
-            </Row>
-
-            </Container>
+                    </Row>
+                </Container>
             </>
         )
     }

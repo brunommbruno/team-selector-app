@@ -107,6 +107,7 @@ class PlayerCreator extends Component {
 
   render(){
 
+    //calculates the total skill in a team
     let team1Skill = 0;
     let team2Skill = 0;
     this.state.teamOne.map(player => {
@@ -123,6 +124,7 @@ class PlayerCreator extends Component {
         <Container>
             <Row>
                 <Col>
+                {/* Contains Name, Skill, and Position inputs, handles adding onto local state */}
                     <PlayerInput
                         handleInput={this.handleInput}
                         handleAdd={this.handleAdd}
@@ -131,8 +133,10 @@ class PlayerCreator extends Component {
                 </Col>
 
                 <Col className={"mt-5"}>
+                    {/* displays players that still need to be inputted */}
                     <Alert variant={"info"} style={{fontSize:"1.5rem"}}>Players Left: {this.state.player_amount}</Alert>
                     <ListGroup className={"d-flex flex-row flex-wrap"}>
+                    {/* maps through each player in local state and displays it */}
                     {this.state.players.map(player => (
                         <ListGroup.Item variant={"info"} className={"player-input-list"} style={{width: "30%"}}>
                             
@@ -143,8 +147,8 @@ class PlayerCreator extends Component {
                 </Col>
             </Row>
             <Row>
+                {/* maps through each team and displays their color, kit, skill level */}
                 {this.props.teams.map(team => (
-                    
                     <Col className={"text-center fs-15 team-display"}>
                         <h2>{team.team_name}</h2>
                         <img 
@@ -157,11 +161,13 @@ class PlayerCreator extends Component {
                     </Col>
                     ))}
                 <Col>
+                    {/* Randomises player array - can be clicked multiple times */}
                     {!this.state.player_amount > 0 ? 
                         <Button className={"button mx-auto "} onClick={this.handleRandom}>Randomise the teams!</Button> : null
                     }
                 </Col>
                 <Col>
+                    {/* Once players have been randomised atleast one - posts new teams - can be taken to new page where they are displayed */}
                 {this.state.teamsRandomised ? 
                         <Link to="/match"><Button className={"button"}onClick={this.handlePost}>See the teams!</Button></Link> : null
                     }
