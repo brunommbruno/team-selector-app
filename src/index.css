@@ -78,6 +78,11 @@ code {
   margin: 0.1rem;
 }
 
+.loading-div{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
 
 @media screen and (max-width: 1000px){
 
