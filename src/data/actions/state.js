@@ -7,30 +7,30 @@ export const startApp = ({match_id}) => {
     };
 };
 
-export const addTeam = ({id, team_name, team_color, team_kit, score, match_id}) => {
+export const addTeam = (team) => {
     return {
         type: "ADD_TEAM",
         payload: {
-            id: id,
-            team_name: team_name,
-            team_color: team_color,
-            team_kit: team_kit,
-            score: score,
-            match_id: match_id,
+            id: team.id,
+            team_name: team.team_name,
+            team_color: team.team_color,
+            team_kit: team.team_kit,
+            score: team.score,
+            match_id: team.match_id,
         },
     };
 };
 
-export const addPlayer = ({id, player_name, player_skill, player_position, team_id, teamNum}) => {
+export const addPlayer = (player) => {
     return{
         type: "ADD_PLAYER",
         payload: {
-            id: id,
-            player_name: player_name,
-            player_skill: player_skill,
-            player_position: player_position,
-            team_id: team_id,
-            teamNum: teamNum,
+            id: player.id,
+            player_name: player.player_name,
+            player_skill: player.player_skill,
+            player_position: player.player_position,
+            team_id: player.team_id,
+            teamNum: player.teamNum,
         }
     }
 }
@@ -44,15 +44,15 @@ export const changePlayerAmount = ({player_amount}) => {
     }
 }
 
-export const editTeam = ({id, score, team_name, team_color, team_kit}) => {
+export const editTeam = (team) => {
     return{
         type: "EDIT_TEAM",
         payload: {
-            id: id,
-            team_name: team_name,
-            team_color: team_color,
-            team_kit: team_kit,
-            score: score,
+            id: team.id,
+            team_name: team.team_name,
+            team_color: team.team_color,
+            team_kit: team.team_kit,
+            score: team.score,
         }
     }
 }
