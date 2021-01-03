@@ -17,7 +17,7 @@ class PreviousMatches extends Component{
             match: [],
             teamsLoaded: false,
             playersLoaded: false,
-            matchIdInput: "",
+            matchIdInput: 67,
             teamOneId: null,
             teamTwoId: null,
             players: [],
@@ -29,6 +29,19 @@ class PreviousMatches extends Component{
     }
 
     getMatch(){
+
+        if(this.state.teamsLoaded){
+            this.setState({
+                match: [],
+                teamsLoaded: false,
+                playersLoaded: false,
+                matchIdInput: 67,
+                teamOneId: null,
+                teamTwoId: null,
+                players: [],
+            });
+        }
+
         axios.get(`/matches/${this.state.matchIdInput}`).then(({data}) => {
             this.setState({match: data.data, teamsLoaded: true, teamOneId: data.data.teams[0].id, teamTwoId: data.data.teams[1].id})
         })
@@ -59,7 +72,13 @@ class PreviousMatches extends Component{
                 <Container>
                     <Row>
                         <Col className={"text-center"}>
-                            <input placeholder={"Match Id: e.g 67"}onChange={(e) => this.handleInput(e)}></input>
+                            <Form.Control 
+                                type="text" 
+                                placeholder={"Match Id: e.g 67"}
+                                onChange={(e) => this.handleInput(e)}
+                                style={{width: "50%", margin: "auto"}}
+                            >
+                            </Form.Control>
                             <Button className={"button"}onClick={this.getMatch}>Get Teams</Button>
                             {this.state.teamsLoaded ? <Button className={"button"}onClick={this.getPlayers}>Get Players</Button> : null}
                         </Col>
@@ -80,9 +99,15 @@ class PreviousMatches extends Component{
                                 <div className={"team-color-bar"}style={{backgroundColor: `${match.teams[0].team_color}`}}></div>
                                 {this.state.playersLoaded ?
                                 <div>
-                                    {this.state.players[0].map(player => (
+                                    {this.state.players ? 
+                                    <div>
+                                    {this.state.players.map(player => (
                                         <p>{player.player_name}</p>
                                     ))}
+                                    </div>
+                                    :
+                                    <p>No Players Available</p>
+                                    }
                                 </div>
                                 :
                                 null
@@ -101,9 +126,15 @@ class PreviousMatches extends Component{
                                 <div className={"team-color-bar"}style={{backgroundColor: `${match.teams[1].team_color}`}}></div>
                                 {this.state.playersLoaded ?
                                 <div>
-                                    {this.state.players[0].map(player => (
+                                    {this.state.players ? 
+                                    <div>
+                                    {this.state.players.map(player => (
                                         <p>{player.player_name}</p>
                                     ))}
+                                    </div>
+                                    :
+                                    <p>No Players Available</p>
+                                    }
                                 </div>
                                 :
                                 null
