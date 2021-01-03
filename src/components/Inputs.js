@@ -13,7 +13,7 @@ class Inputs extends Component{
           )
       
 
-        const { type, placeholder, handleInput, title, stateName,} = this.props
+        const { type, placeholder, handleInput, title, stateName} = this.props
 
         return(
             <>

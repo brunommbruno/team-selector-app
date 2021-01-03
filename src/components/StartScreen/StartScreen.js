@@ -17,13 +17,9 @@ class StartScreen extends Component {
         <Container>
           <Row>
         <Nav variant="tabs">
-            {/* //main intro page */}
-            <Nav.Item className={"m-4"}> 
-                Home
-            </Nav.Item>
             {/* //displays previous matches */}
             <Nav.Item className={"m-4"}>
-                History
+              <Link to="/history">Previous Matches</Link>
             </Nav.Item>
         </Nav>
         </Row>

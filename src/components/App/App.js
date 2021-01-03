@@ -9,6 +9,7 @@ import StartScreen from "../StartScreen";
 import TeamCreator from "../TeamCreator";
 import PlayerCreator from "../PlayerCreator";
 import Match from "../Match";
+import PreviousMatches from "../PreviousMatches";
 import LoadingAnim from "../LoadingAnim";
 
 class App extends Component {
@@ -45,6 +46,12 @@ class App extends Component {
             <Route exact path="/team-creator">
             <div className={"container"}>
               <TeamCreator />
+            </div>
+            </Route>
+
+            <Route exact path="/history">
+            <div className={"container"}>
+              <PreviousMatches />
             </div>
             </Route>
             
