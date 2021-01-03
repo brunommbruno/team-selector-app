@@ -1,6 +1,11 @@
 import { Component } from "react";
-import { Nav, Button} from "react-bootstrap";
+import { Nav, Button, Container, Row, Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
+
+import def from "../../img/def.png";
+import mid from "../../img/mid.png";
+import att from "../../img/att.png";
+
 
 class StartScreen extends Component {
 
@@ -9,7 +14,8 @@ class StartScreen extends Component {
 
     return(
       <>
-        
+        <Container>
+          <Row>
         <Nav variant="tabs">
             {/* //main intro page */}
             <Nav.Item className={"m-4"}> 
@@ -20,10 +26,13 @@ class StartScreen extends Component {
                 History
             </Nav.Item>
         </Nav>
+        </Row>
 
 
-
-        <div style={{backgroundColor: "white"}}className={"p-3 home-info text-dark m-4"}>
+      
+        <div className={"p-3 home-info m-4"}>
+          <Row>
+          <Col>
             <h2>How To Use:</h2>
             <ul>
                 <li>Create Each Team By Choosing: </li>
@@ -40,8 +49,18 @@ class StartScreen extends Component {
                   <li>Skill Rating</li>
                 </ul>
 
-                <li>Randomise The Teams And Update Scores!</li>
+                <li>Randomise The Teams</li>
+                <li>Update Scores!</li>
             </ul>
+            </Col>
+            <Col className={"player-img"}>
+              <img className={"team-creator-kit"}src={def} />
+              <img className={"team-creator-kit"}src={mid} />
+              <img className={"team-creator-kit"}src={att} />
+            </Col>
+            </Row>
+
+
 
         </div>
 
@@ -56,6 +75,7 @@ class StartScreen extends Component {
               </Button>
             </Link>
         </div>
+        </Container>
       </>
     )
   }

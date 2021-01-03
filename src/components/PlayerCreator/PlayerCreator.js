@@ -130,7 +130,7 @@ class PlayerCreator extends Component {
                     <Alert variant={"info"} style={{fontSize:"1.5rem"}}>Players Left: {this.state.player_amount}</Alert>
                     <ListGroup className={"d-flex flex-row flex-wrap"}>
                     {this.state.players.map(player => (
-                        <ListGroup.Item variant={"info"} style={{width: "30%"}}>
+                        <ListGroup.Item variant={"info"} className={"player-input-list"} style={{width: "30%"}}>
                             
                             <h5><img src={user}style={{height: "2rem"}}alt={"user icon"}/>{`${player.player_name}`}</h5>
                         </ListGroup.Item>
@@ -141,7 +141,7 @@ class PlayerCreator extends Component {
             <Row>
                 {this.props.teams.map(team => (
                     
-                    <Col className={"text-center fs-15"}>
+                    <Col className={"text-center fs-15 team-display"}>
                         <h2>{team.team_name}</h2>
                         <img 
                             className={"m-3 team-creator-kit"}
@@ -154,7 +154,7 @@ class PlayerCreator extends Component {
                     ))}
                 <Col>
                     {!this.state.player_amount > 0 ? 
-                        <Button className={"button mx-auto"} onClick={this.handleRandom}>Randomise the teams!</Button> : null
+                        <Button className={"button mx-auto "} onClick={this.handleRandom}>Randomise the teams!</Button> : null
                     }
                 </Col>
                 <Col>

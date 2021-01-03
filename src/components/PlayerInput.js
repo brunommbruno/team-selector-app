@@ -16,7 +16,7 @@ class PlayerInput extends Component {
 
     return(
         <>
-          <Container className={"text-center mt-5 fs-15"}>
+          <Container className={"text-center mt-5 fs-15 player-input"}>
               <Form>
                 <Row>
                   <Col>
@@ -42,7 +42,7 @@ class PlayerInput extends Component {
 
                 <Row>
                   
-                  <ToggleButtonGroup type="radio" name="options" className={"mt-4"}>
+                  <ToggleButtonGroup type="radio" name="options" className={"mt-4 button-group"}>
                     <ToggleButton
                       value={1}
                       variant="transparent"

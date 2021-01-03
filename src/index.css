@@ -34,6 +34,8 @@ code {
 
 .home-info{
   font-size: 1rem;
+  background-color: #182935;
+  color: white;
 }
 
 .team-color-bar{
@@ -64,4 +66,49 @@ code {
 .player-creator-img{
   height: 4rem;
   border-radius: 1rem;
+}
+
+.home-info .team-creator-kit{
+  height: 6rem;
+  margin-top: 5rem;
+}
+
+.player-input-list{
+  width: 2rem;
+  margin: 0.1rem;
+}
+
+
+@media screen and (max-width: 1000px){
+
+  .home-info .player-img{
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 550px){
+
+  .player-input .player-creator-img{
+    height: 2.5rem;
+  }
+
+  .player-input .button-group{
+    display: flex;
+    justify-content: center;
+  }
+
+  .team-display{
+    margin-left: 2.3rem;
+  }
+
+  .player-input-list{
+    display: none;
+  }
+
+  .player-display img{
+    height: 2rem;
+    margin: 3px;
+  }
+
 }
