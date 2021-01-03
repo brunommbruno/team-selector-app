@@ -1,5 +1,5 @@
 import axios from "../../axios";
-import { startApp, addTeam, addPlayer } from "./state";
+import { startApp, addTeam, addPlayer, editTeam } from "./state";
 
 export const initiateApp = () => {
     return(dispatch) => {
@@ -35,7 +35,7 @@ export const postTeam = ({team_name, team_color, team_kit, match_id}) => {
                         team_name: data.data.team_name,
                         team_color: data.data.team_color,
                         team_kit: data.data.team_kit,
-                        score: data.data.score,
+                        score: 0,
                         match_id: data.data.match_id,
                     })
                 )
@@ -64,3 +64,23 @@ export const postPlayer = ({player_name, player_skill, player_position, teamId, 
     };
 };
 
+export const patchTeam = ({id, score, team_name, team_color, team_kit}) => {
+    return(dispatch) => {
+        axios.patch(`teams/${id}`, {
+            team_name: team_name,
+            team_color: team_color,
+            team_kit: team_kit,
+            score: score ,
+        }).then(({ data }) => {
+            dispatch(
+                editTeam({
+                    id: id,
+                    score: data.data.score,
+                    team_color: data.data.team_color,
+                    team_name: data.data.team_name,
+                    team_kit: data.data.team_kit,
+                })
+            )
+        })
+    }
+}

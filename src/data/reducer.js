@@ -1,4 +1,7 @@
+import initial from "./initial";
+
 const reducer = (state, action) => {
+    
     switch(action.type){
         case "START_APP":
             return {
@@ -24,6 +27,23 @@ const reducer = (state, action) => {
                 ...state,
                 player_amount: action.payload.player_amount,
             }
+
+        case "EDIT_TEAM":
+            return{
+                ...state,
+                teams: state.teams.map((team) => {
+                    if (team.id !== action.payload.id) {
+                        return team;
+                    } else {
+                        return{
+                            ...team,
+                            ...action.payload,
+                        }
+                    }
+                })
+            }
+
+        case "RESET": return initial;
 
         default:
 			return state;

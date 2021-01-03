@@ -43,3 +43,22 @@ export const changePlayerAmount = ({player_amount}) => {
         }
     }
 }
+
+export const editTeam = ({id, score, team_name, team_color, team_kit}) => {
+    return{
+        type: "EDIT_TEAM",
+        payload: {
+            id: id,
+            team_name: team_name,
+            team_color: team_color,
+            team_kit: team_kit,
+            score: score,
+        }
+    }
+}
+
+export const resetState = () => {
+    return{
+        type: "RESET"
+    }
+}
