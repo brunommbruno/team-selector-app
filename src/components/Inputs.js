@@ -36,7 +36,7 @@ class Inputs extends Component{
                             delay={{show: 250, hide: 400}}
                             overlay={renderTooltip}
                         >
-                        <Button variant="info" className={"mb-2"} >?</Button>
+                        <Button variant="info" className={"info"} >?</Button>
                         </OverlayTrigger>
                         <Form.Control
                             as="select"

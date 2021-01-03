@@ -141,15 +141,14 @@ class PlayerCreator extends Component {
             <Row>
                 {this.props.teams.map(team => (
                     
-                    <Col className={"text-center player-creator-teams"}>
+                    <Col className={"text-center fs-15"}>
                         <h2>{team.team_name}</h2>
                         <img 
-                            className={"m-3"}
-                            style={{height: "3rem"}} 
+                            className={"m-3 team-creator-kit"}
                             src={team.team_kit === "classic" ? kitClassic : team.team_kit === "striped" ? kitStriped : kitCheckers}
                             alt={"team kit"}
                         />
-                            <div style={{margin:"auto",width:"60%",height: "20px", backgroundColor: `${team.team_color}`}}></div>
+                            <div className={"team-color-bar"}style={{backgroundColor: `${team.team_color}`}}></div>
                             <p>Skill Level: {team.id === this.props.teamOneId ? team1Skill : team2Skill}</p>
                     </Col>
                     ))}

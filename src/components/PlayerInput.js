@@ -16,7 +16,7 @@ class PlayerInput extends Component {
 
     return(
         <>
-          <Container className={"text-center mt-5 player-input"}>
+          <Container className={"text-center mt-5 fs-15"}>
               <Form>
                 <Row>
                   <Col>
@@ -50,7 +50,7 @@ class PlayerInput extends Component {
                     >
                       <img 
                           src={gk} 
-                          style={{height: "4rem",  borderRadius: "1rem"}}
+                          className={"player-creator-img"}
                           alt={"Goalkeeper Icon"}
                         />
                         <p className={"text-white"}>Goalkeeper</p>
@@ -63,7 +63,7 @@ class PlayerInput extends Component {
                   >
                     <img 
                         src={def} 
-                        style={{height: "4rem",  borderRadius: "1rem"}}
+                        className={"player-creator-img"}
                         alt={"Defender Icon"}
                       />
                       <p className={"text-white"}>Defender</p>
@@ -76,7 +76,7 @@ class PlayerInput extends Component {
                   >
                     <img 
                         src={mid} 
-                        style={{height: "4rem",  borderRadius: "1rem"}}
+                        className={"player-creator-img"}
                         alt={"Midfielder Icon"}
                       />
                       <p className={"text-white"}>Midfielder</p>
@@ -89,7 +89,7 @@ class PlayerInput extends Component {
                   >
                     <img 
                         src={att} 
-                        style={{height: "4rem",  borderRadius: "1rem"}}
+                        className={"player-creator-img"}
                         alt={"Attacker Icon"}
                       />
                       <p className={"text-white"}>Attacker</p>

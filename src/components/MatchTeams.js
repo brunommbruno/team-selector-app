@@ -13,9 +13,9 @@ class MatchTeams extends Component{
         const {teamName, teamColor, players, teamKit} = this.props
 
         return(
-            <Col className={"teams"}>
+            <Col className={"home-info"}>
                 <h2 className={"text-center"}>{teamName}</h2>
-                <div style={{margin:"auto",width:"60%",height: "20px", backgroundColor: `${teamColor}`}}></div>
+                <div className={"team-color-bar"}style={{backgroundColor: `${teamColor}`}}></div>
                 <div className={"mt-3 text-center"}>
                 {players.map(player => (
                     <Alert variant="success">

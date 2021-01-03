@@ -15,7 +15,7 @@ class TeamInput extends Component {
 
     return(
         <>
-          <Container className={"text-center mt-5 team-input"}>
+          <Container className={"text-center mt-5 fs-15"}>
             <Form>
               <Row>
                 <Col>
@@ -48,7 +48,7 @@ class TeamInput extends Component {
                     >
                         <img 
                           src={kitClassic} 
-                          style={{height: "4rem",  borderRadius: "1rem"}}
+                          className={"team-creator-kit"}
                           alt={"Blank Jersey"}
                         />
                     </ToggleButton>
@@ -59,7 +59,7 @@ class TeamInput extends Component {
                     >
                       <img 
                         src={kitStriped} 
-                        style={{height: "4rem",  borderRadius: "1rem"}}
+                        className={"team-creator-kit"}
                         alt={"Striped Jersey"}
                       />
                     </ToggleButton>
@@ -70,7 +70,7 @@ class TeamInput extends Component {
                     >
                       <img 
                         src={kitCheckers} 
-                        style={{height: "4rem",  borderRadius: "1rem"}}
+                        className={"team-creator-kit"}
                         alt={"Checkered Jersey"}
                       />
                     </ToggleButton>
