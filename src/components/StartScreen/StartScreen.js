@@ -50,9 +50,9 @@ class StartScreen extends Component {
             </ul>
             </Col>
             <Col className={"player-img"}>
-              <img className={"team-creator-kit"}src={def} />
-              <img className={"team-creator-kit"}src={mid} />
-              <img className={"team-creator-kit"}src={att} />
+              <img className={"team-creator-kit"}src={def} alt="defender icon" />
+              <img className={"team-creator-kit"}src={mid} alt="midfielder icon" />
+              <img className={"team-creator-kit"}src={att} alt="attacker icon" />
             </Col>
             </Row>
 
