@@ -116,4 +116,9 @@ code {
     margin: 3px;
   }
 
+  .previous-match {
+    display: flex;
+    justify-content: flex-end;
+  }
+
 }

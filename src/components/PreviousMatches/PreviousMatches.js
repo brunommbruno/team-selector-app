@@ -84,8 +84,6 @@ class PreviousMatches extends Component{
                         </Col>
                     </Row>
                     <Row>
-                    <Col>
-                    </Col>
                         {this.state.teamsLoaded ?
                         <>
                             <Col>
@@ -104,6 +102,7 @@ class PreviousMatches extends Component{
                                     {this.state.players.map(player => (
                                         <p>{player.player_name}</p>
                                     ))}
+                                    <p>{match.teams[0].score}</p>
                                     </div>
                                     :
                                     <p>No Players Available</p>
@@ -115,8 +114,8 @@ class PreviousMatches extends Component{
                                 </div>
                             </Col>
 
-                            <Col>
-                                <div className={"text-center fs-15 team-display"}>
+                            <Col className={"previous-match"}>
+                                <div className={"text-center fs-15 team-display "}>
                                 <h2>{match.teams[1].team_name}</h2>
                                 <img 
                                     className={"m-3 team-creator-kit"}
@@ -131,6 +130,7 @@ class PreviousMatches extends Component{
                                     {this.state.players.map(player => (
                                         <p>{player.player_name}</p>
                                     ))}
+                                    <p>{match.teams[1].score}</p>
                                     </div>
                                     :
                                     <p>No Players Available</p>
@@ -146,26 +146,9 @@ class PreviousMatches extends Component{
                     null
             }
 
-            <Col>
-            </Col>
+
             </Row>
 
-            {this.state.teamsLoaded  && this.state.playersLoaded ?
-            <Row className={"text-center"}>
-                <Col>
-                </Col>
-                <Col>
-                {match.teams[0].score}
-                </Col>
-                <Col>
-                {match.teams[1].score}
-                </Col>
-                <Col>
-                </Col>
-            </Row>
-            :
-            null
-            }
             </Container>
             </>
         )
