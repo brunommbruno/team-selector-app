@@ -64,17 +64,17 @@ export const postPlayer = (player) => {
     };
 };
 
-export const patchTeam = ({id, score, team_name, team_color, team_kit}) => {
+export const patchTeam = (team) => {
     return(dispatch) => {
-        axios.patch(`teams/${id}`, {
-            team_name: team_name,
-            team_color: team_color,
-            team_kit: team_kit,
-            score: score ,
+        axios.patch(`teams/${team.id}`, {
+            team_name: team.team_name,
+            team_color: team.team_color,
+            team_kit: team.team_kit,
+            score: team.score ,
         }).then(({ data }) => {
             dispatch(
                 editTeam({
-                    id: id,
+                    id: team.id,
                     score: data.data.score,
                     team_color: data.data.team_color,
                     team_name: data.data.team_name,

@@ -13,8 +13,8 @@ const mapStateToProps = (state) => {
 
  const mapDispatchToProps = (dispatch) => {
 	return{
-		editTeam: ({id, team_name, team_color, team_kit, score}) =>  {
-			dispatch(patchTeam({id, team_name, team_color, team_kit, score}));
+		editTeam: (team) =>  {
+			dispatch(patchTeam(team));
 		},
 		reset: () => {
 			dispatch(resetState());
