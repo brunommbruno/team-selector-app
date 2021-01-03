@@ -20,13 +20,13 @@ export const initiateApp = () => {
     }
 }
 
-export const postTeam = ({team_name, team_color, team_kit, match_id}) => {
+export const postTeam = (team) => {
     return (dispatch) => {
         //creates a new team model in the api and returns it
-        axios.post(`matches/${match_id}/teams`, {
-                team_name: team_name,
-                team_color: team_color,
-                team_kit: team_kit,
+        axios.post(`matches/${team.match_id}/teams`, {
+                team_name: team.team_name,
+                team_color: team.team_color,
+                team_kit: team.team_kit,
             }).then(({ data }) => {
                 dispatch(
                     //adds returned values to state
