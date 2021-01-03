@@ -15,7 +15,7 @@ class PlayerCreator extends Component {
         super(props);
 
         this.state = {
-            player_name: "",
+            player_name: "Name",
             player_skill: 1,
             player_position: "att",
 
@@ -57,7 +57,7 @@ class PlayerCreator extends Component {
             this.setState({
                 players: [...this.state.players, player],
                 player_amount: this.state.player_amount - 1,
-                player_name: "",
+                player_name: "Name",
                 player_skill: 1,
                 player_position: "att",
             })

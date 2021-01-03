@@ -43,12 +43,12 @@ export const postTeam = (team) => {
     };
 };
 
-export const postPlayer = (player) => {
+export const postPlayer = ({player_name, player_skill, player_position, teamId, teamNum}) => {
     return(dispatch) => {
-    axios.post(`teams/${player.teamId}/players`, {
-        player_name: player.player_name,
-        player_skill: player.player_skill,
-        player_position: player.player_position,
+    axios.post(`teams/${teamId}/players`, {
+        player_name: player_name,
+        player_skill: player_skill,
+        player_position: player_position,
     }).then(({ data }) =>{
         dispatch(
             addPlayer({
@@ -57,7 +57,7 @@ export const postPlayer = (player) => {
                 player_skill: data.data.player_skill,
                 player_position: data.data.player_position,
                 team_id: data.data.team_id,
-                teamNum: player.teamNum,
+                teamNum: teamNum,
             })
         )
     });

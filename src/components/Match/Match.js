@@ -74,7 +74,7 @@ class Match extends Component{
                     </Col>
                 </Row>
                 </Container>
-                <Link to="/"><Button onClick={this.props.reset}>Finish Game!</Button></Link>
+                <Link to="/"><Button onClick={this.props.reset}>Finish Game!  Match Id: {this.props.teams[0].match_id}</Button></Link>
             </>
         )
     }
