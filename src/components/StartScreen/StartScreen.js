@@ -14,18 +14,7 @@ class StartScreen extends Component {
 
     return(
       <>
-        <Container>
-          <Row>
-        <Nav variant="tabs">
-            {/* //displays previous matches */}
-            <Nav.Item className={"m-4"}>
-              <Link to="/history">Previous Matches</Link>
-            </Nav.Item>
-        </Nav>
-        </Row>
-
-
-      
+      <Container>      
         <div className={"p-3 home-info m-4"}>
           <Row>
           <Col>
@@ -66,8 +55,13 @@ class StartScreen extends Component {
               <Button
                   className={"button p-2"}
                   onClick={this.props.startApp}
-              >Start Selecting!
+              >Start Selecting
               </Button>
+            </Link>
+            <Link to="/history">
+                <Button className="button p-2">
+                  Previous Matches
+                </Button>
             </Link>
         </div>
         </Container>
