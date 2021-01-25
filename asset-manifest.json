@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/team-selector-app/static/css/main.d0f75691.chunk.css",
-    "main.js": "/team-selector-app/static/js/main.c43b5add.chunk.js",
-    "main.js.map": "/team-selector-app/static/js/main.c43b5add.chunk.js.map",
-    "runtime-main.js": "/team-selector-app/static/js/runtime-main.10db157f.js",
-    "runtime-main.js.map": "/team-selector-app/static/js/runtime-main.10db157f.js.map",
-    "static/js/2.2f5d1bea.chunk.js": "/team-selector-app/static/js/2.2f5d1bea.chunk.js",
-    "static/js/2.2f5d1bea.chunk.js.map": "/team-selector-app/static/js/2.2f5d1bea.chunk.js.map",
-    "static/js/3.12d39dde.chunk.js": "/team-selector-app/static/js/3.12d39dde.chunk.js",
-    "static/js/3.12d39dde.chunk.js.map": "/team-selector-app/static/js/3.12d39dde.chunk.js.map",
+    "main.css": "/team-selector-app/static/css/main.c58ef940.chunk.css",
+    "main.js": "/team-selector-app/static/js/main.5e595549.chunk.js",
+    "main.js.map": "/team-selector-app/static/js/main.5e595549.chunk.js.map",
+    "runtime-main.js": "/team-selector-app/static/js/runtime-main.47d49684.js",
+    "runtime-main.js.map": "/team-selector-app/static/js/runtime-main.47d49684.js.map",
+    "static/js/2.ba04f0a7.chunk.js": "/team-selector-app/static/js/2.ba04f0a7.chunk.js",
+    "static/js/2.ba04f0a7.chunk.js.map": "/team-selector-app/static/js/2.ba04f0a7.chunk.js.map",
+    "static/js/3.bc72125a.chunk.js": "/team-selector-app/static/js/3.bc72125a.chunk.js",
+    "static/js/3.bc72125a.chunk.js.map": "/team-selector-app/static/js/3.bc72125a.chunk.js.map",
     "index.html": "/team-selector-app/index.html",
-    "static/css/main.d0f75691.chunk.css.map": "/team-selector-app/static/css/main.d0f75691.chunk.css.map",
-    "static/js/2.2f5d1bea.chunk.js.LICENSE.txt": "/team-selector-app/static/js/2.2f5d1bea.chunk.js.LICENSE.txt",
+    "static/css/main.c58ef940.chunk.css.map": "/team-selector-app/static/css/main.c58ef940.chunk.css.map",
+    "static/js/2.ba04f0a7.chunk.js.LICENSE.txt": "/team-selector-app/static/js/2.ba04f0a7.chunk.js.LICENSE.txt",
     "static/media/kit-checkers.033be1c3.png": "/team-selector-app/static/media/kit-checkers.033be1c3.png",
     "static/media/kit-striped.f2ed9834.png": "/team-selector-app/static/media/kit-striped.f2ed9834.png",
     "static/media/user.33e7df09.png": "/team-selector-app/static/media/user.33e7df09.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.10db157f.js",
-    "static/js/2.2f5d1bea.chunk.js",
-    "static/css/main.d0f75691.chunk.css",
-    "static/js/main.c43b5add.chunk.js"
+    "static/js/runtime-main.47d49684.js",
+    "static/js/2.ba04f0a7.chunk.js",
+    "static/css/main.c58ef940.chunk.css",
+    "static/js/main.5e595549.chunk.js"
   ]
 }
