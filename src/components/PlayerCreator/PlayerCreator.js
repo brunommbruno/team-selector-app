@@ -121,7 +121,7 @@ class PlayerCreator extends Component {
       <>
 
         {/* Player input component is disabled after enough players have been added*/}
-        <Container>
+        <Container className="ppt">
             <Row>
                 <Col>
                 {/* Contains Name, Skill, and Position inputs, handles adding onto local state */}
@@ -138,9 +138,8 @@ class PlayerCreator extends Component {
                     <ListGroup className={"d-flex flex-row flex-wrap"}>
                     {/* maps through each player in local state and displays it */}
                     {this.state.players.map(player => (
-                        <ListGroup.Item variant={"info"} className={"player-input-list"} style={{width: "30%"}}>
-                            
-                            <h5><img src={user}style={{height: "2rem"}}alt={"user icon"}/>{`${player.player_name}`}</h5>
+                        <ListGroup.Item variant={"success"} className={"player-input-list text-center"} style={{width: "20%"}}>
+                            <p style={{fontSize:"1rem", marginTop:"auto"}}>{`${player.player_name}`}</p>
                         </ListGroup.Item>
                     ))}
                     </ListGroup>
@@ -161,15 +160,16 @@ class PlayerCreator extends Component {
                     </Col>
                     ))}
                 <Col>
+                    
                     {/* Randomises player array - can be clicked multiple times */}
                     {!this.state.player_amount > 0 ? 
-                        <Button className={"button mx-auto "} onClick={this.handleRandom}>Randomise the teams!</Button> : null
+                        <Button className={"button "} onClick={this.handleRandom}>Randomise</Button> : null
                     }
                 </Col>
                 <Col>
                     {/* Once players have been randomised atleast one - posts new teams - can be taken to new page where they are displayed */}
                 {this.state.teamsRandomised ? 
-                        <Link to="/match"><Button className={"button"}onClick={this.handlePost}>See the teams!</Button></Link> : null
+                        <Link to="/match"><Button className={"button"}onClick={this.handlePost}>See the teams</Button></Link> : null
                     }
                 </Col>
             </Row>

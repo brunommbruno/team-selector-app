@@ -4,14 +4,7 @@ import {Form, Button, OverlayTrigger, Tooltip} from "react-bootstrap";
 class Inputs extends Component{
 
 
-    render(){
-
-        const renderTooltip = (props) => (
-            <Tooltip id="button-tooltip" {...props}>
-              Allows teams to be sorted by skill
-            </Tooltip>
-          )
-      
+    render(){    
 
         const { type, placeholder, handleInput, title, stateName} = this.props
 
@@ -31,13 +24,6 @@ class Inputs extends Component{
                 type === "select" ? 
                     <Form.Group>
                         <Form.Label>{title}</Form.Label>                    
-                        <OverlayTrigger
-                            placement="right"
-                            delay={{show: 250, hide: 400}}
-                            overlay={renderTooltip}
-                        >
-                        <Button variant="info" className={"info"} >?</Button>
-                        </OverlayTrigger>
                         <Form.Control
                             as="select"
                             onChange={(e) => handleInput(e, `${stateName}`)}
