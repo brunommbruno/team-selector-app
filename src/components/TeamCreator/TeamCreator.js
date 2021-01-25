@@ -71,56 +71,64 @@ class TeamCreator extends Component {
   render(){
     return(
         <>
-            <Container>
-              <Row>
+            <Container className="team-creator">
+              <Row className="ppt">
                 <Col>
-                  {/* Includes name,color,kit inputs for each team*/}
-                  <TeamInput 
-                    //handleInput prop allows component to access local state method
-                    handleInput={this.handleInput} 
-                    handleColor={this.handleColor}
-                    handleKit={this.handleKit}
-                    team="teamOne"
-                    teamName={this.state.teamOne_name}
-                    teamColor={this.state.teamOne_color}
-                  />
-                </Col>
+                  <Row>
+                    <Col>
+                      {/* Includes name,color,kit inputs for each team*/}
+                      <TeamInput 
+                        //handleInput prop allows component to access local state method
+                        handleInput={this.handleInput} 
+                        handleColor={this.handleColor}
+                        handleKit={this.handleKit}
+                        team="teamOne"
+                        teamName={this.state.teamOne_name}
+                        teamColor={this.state.teamOne_color}
+                      />
+                    </Col>
+                  </Row>
+                  <Row>
+                    {/*saves to state amount of players that can be inputted*/}
+                    <Col className={"text-center"}>
+                      <label for="player-amount">Players Per Team: </label>  
+                        <select  
+                          id="player-amount" onChange={(e) => this.handleInput(e, "player_amount")} 
+                          className={"amount-selector"}
+                        >
+                          <option value="6">6</option>
+                          <option value="5">5</option>
+                          <option value="4" selected="selected">4</option>
+                          <option value="3">3</option>
+                          <option value="2">2</option>
+                        </select>
+                    </Col>
+                  </Row>
+                  </Col>    
                 <Col>
-                  <TeamInput 
-                    handleInput={this.handleInput}
-                    handleColor={this.handleColor}
-                    handleKit={this.handleKit}
-                    team="teamTwo"
-                    teamName={this.state.teamTwo_name}
-                    teamColor={this.state.teamTwo_color}
-                  />
-                </Col>
-              </Row>
-              <Row>
-                {/*saves to state amount of players that can be inputted*/}
-                <Col className={"text-center mt-5"}>
-                  <label for="player-amount">Players per team: </label>  
-                    <select id="player-amount" onChange={(e) => this.handleInput(e, "player_amount")} className={"m-2"}>
-                      <option value="6">6</option>
-                      <option value="5">5</option>
-                      <option value="4" selected="selected">4</option>
-                      <option value="3">3</option>
-                      <option value="2">2</option>
-                    </select>
 
+                  <Row>
+                      <TeamInput 
+                        handleInput={this.handleInput}
+                        handleColor={this.handleColor}
+                        handleKit={this.handleKit}
+                        team="teamTwo"
+                        teamName={this.state.teamTwo_name}
+                        teamColor={this.state.teamTwo_color}
+                      />
+                  </Row>
+                  <Row>
+                    <Link to="/add-players" className={"text-center h2"}>
+                      <Button 
+                        className="button"
+                        onClick={this.handlePost}>
+                          Create Teams!
+                      </Button>
+                    </Link>
+                  </Row>
                 </Col>
-              </Row>
-              <Row>
-                <Col className={"text-center mt-3"}>
-                <Link to="/add-players" className={"h2"}>
-                  <Button 
-                    variant="light"
-                    onClick={this.handlePost}>
-                      Create Teams!
-                  </Button>
-                </Link>
-                </Col>
-              </Row>
+
+              </Row>  
             </Container>
         </>
     )

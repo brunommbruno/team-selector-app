@@ -2,9 +2,9 @@ import { Component } from "react";
 import { Nav, Button, Container, Row, Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-import def from "../../img/def.png";
-import mid from "../../img/mid.png";
-import att from "../../img/att.png";
+// import def from "../../img/def.png";
+// import mid from "../../img/mid.png";
+// import att from "../../img/att.png";
 
 
 class StartScreen extends Component {

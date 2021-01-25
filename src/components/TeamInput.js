@@ -15,7 +15,7 @@ class TeamInput extends Component {
 
     return(
         <>
-          <Container className={"text-center mt-5 fs-15"}>
+          <Container className={"team-input text-center mt-5 fs-15"}>
             <Form>
               <Row>
                 <Col>
@@ -76,7 +76,7 @@ class TeamInput extends Component {
                       />
                     </ToggleButton>
                   </ToggleButtonGroup> 
-                 <div style={{height: "10px", backgroundColor: `${teamColor}`}}></div>
+                 <div style={{height: "10px", backgroundColor: `${teamColor}`, border: "1px solid white"}}></div>
                 </Col>
 
                 <Col>  

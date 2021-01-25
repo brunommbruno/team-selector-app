@@ -31,6 +31,10 @@ code {
   border-color: green;
 }
 
+.team-input{
+  padding-bottom: 3rem;
+}
+
 .fs-15{
   font-size: 1.5rem;
 }
@@ -39,6 +43,23 @@ code {
   font-size: 1rem;
   background-color: #182935;
   color: white;
+}
+
+.ppt{
+  border-radius: 4rem;
+  background-color: rgba(0, 0, 0, 0.226);
+  margin-top: 1rem;
+}
+
+.ppt button{
+  font-size: 1.5rem;
+}
+
+.amount-selector{
+  color: white;
+  background-color: #5EC2A6;
+  border-radius: 0.6rem;
+  margin-left: 1rem;
 }
 
 .home .button {
@@ -55,6 +76,7 @@ code {
   margin:auto;
   width: 60%;
   height: 15px;
+  border: 1px solid white;
 }
 
 
