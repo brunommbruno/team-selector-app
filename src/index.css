@@ -7,8 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 2rem;
   font-family: 'Roboto', sans-serif;
-  background-color: #2F4858;
   color: white;
+  background-image: url("http://www.tcminplay.com/wp-content/uploads/2018/02/stadium-background.jpg"); 
+  background-attachment: fixed;
+  background-size: cover;
+  background-position-x: 46.5%;
 }
 
 code {
@@ -84,11 +87,12 @@ code {
   left: 50%;
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 1100px){
 
   .home-info .player-img{
     display: none;
   }
+
 
 }
 
