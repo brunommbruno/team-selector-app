@@ -14,8 +14,8 @@ class StartScreen extends Component {
 
     return(
       <>
-      <Container>      
-        <div className={"p-3 home-info m-4"}>
+      <Container className="home">      
+        {/* <div className={"p-3 home-info m-4"}>
           <Row>
           <Col>
             <h2>How To Use:</h2>
@@ -47,10 +47,11 @@ class StartScreen extends Component {
 
 
 
-        </div>
+        </div> */}
 
         {/* //creates a new match post request to the api, saves match id to main state*/}
         <div className={"text-center mt-4"}>
+          <Row>
             <Link to="team-creator">
               <Button
                   className={"button p-2"}
@@ -58,11 +59,14 @@ class StartScreen extends Component {
               >Start Selecting
               </Button>
             </Link>
+          </Row>
+          <Row>
             <Link to="/history">
                 <Button className="button p-2">
                   Previous Matches
                 </Button>
             </Link>
+          </Row>
         </div>
         </Container>
       </>

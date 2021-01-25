@@ -41,6 +41,16 @@ code {
   color: white;
 }
 
+.home .button {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.home{
+  position: absolute;
+  top: 20%;
+}
+
 .team-color-bar{
   margin:auto;
   width: 60%;
@@ -97,6 +107,12 @@ code {
 }
 
 @media screen and (max-width: 550px){
+
+
+  .home{
+    top: 40%;
+
+  }
 
   .player-input .player-creator-img{
     height: 2.5rem;
