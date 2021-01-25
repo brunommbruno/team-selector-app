@@ -70,17 +70,19 @@ class Match extends Component{
                 <Row className={"text-center"}>
                     <Col>
                     Score: {teams[0].score}
-                    <Button className={"button"} onClick={() => this.handlePatch(teams[0])}>+</Button>
+                    <Button className={"button"} style={{fontSize: "1rem"}}onClick={() => this.handlePatch(teams[0])}>+</Button>
                     </Col>
                     <Col>
                     Score: {teams[1].score}
                     <Button className={"button"} onClick={() => this.handlePatch(teams[1])}
+                    style={{fontSize: "1rem"}}
                     >+</Button>
                     </Col>
                 </Row>
                 </Container>
                 {/* Brings back to home page and resets state so new valeus can be inputted */}
-                <Link to="/"><Button onClick={this.props.reset}>Finish Game!  Match Id: {this.props.teams[0].match_id}</Button></Link>
+                <Link to="/"><Button className="button" 
+                onClick={this.props.reset}>Finish Game Match Id: {this.props.teams[0].match_id}</Button></Link>
             </>
         )
     }
