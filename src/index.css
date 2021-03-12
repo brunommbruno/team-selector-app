@@ -8,7 +8,7 @@ body {
   font-size: 2rem;
   font-family: 'Roboto', sans-serif;
   color: white;
-  background-image: url("http://www.tcminplay.com/wp-content/uploads/2018/02/stadium-background.jpg"); 
+  background-image: url("./img/background.jpg"); 
   background-attachment: fixed;
   background-size: cover;
   background-position-x: 46.5%;
