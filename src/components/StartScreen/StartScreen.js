@@ -20,6 +20,7 @@ class StartScreen extends Component {
               <Link to="/history">
                 <Button className="button p-2">Previous Matches</Button>
               </Link>
+              <h1>Back-End currently disabled</h1>
             </Row>
           </div>
         </Container>
